@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ETM | The Elite Transfer Market</title>
+
+  <meta
+    name="description"
+    content="The Elite Transfer Market. Follow African football transfers, players, clubs, competitions, and news."
+  >
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  #hero-title {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: clamp(1.65rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.035em;
+    max-width: 650px;
+  }
+  
+  #hero-description {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0;
+    max-width: 480px;
+    color: rgba(255, 255, 255, 0.82);
+  }
+  
+  #hero-category,
+  #hero-date {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+  
+  @media (max-width: 640px) {
+    #hero-title {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    
+    #hero-description {
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+    
+    #hero-category,
+    #hero-date {
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+    }
+  }
+</style>
+  
+  
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            etm: {
+              dark: "#0b0d0c",
+              lime: "#b7ff3c",
+              ink: "#151817",
+              soft: "#f5f6f3",
+              muted: "#858b85"
+            }
+          },
+          fontFamily: {
+            sans: ["Roboto", "Arial", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .mobile-menu {
+      transform-origin: top;
+      animation: menuDrop 180ms ease-out;
+    }
+
+    @keyframes menuDrop {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-etm-soft text-etm-ink antialiased">
+
+  <!-- Navigation -->
+  <header class="relative z-50">
+    <nav
+      id="main-navigation"
+      class="border-b border-black/10 bg-white"
+      aria-label="Main navigation"
+    >
+
+      <!-- Navigation Bar -->
+      <div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+        <!-- Logo -->
+        <a
+          href="#home"
+          class="flex shrink-0 items-center"
+          aria-label="ETM homepage"
+        >
+          <img
+            src="logo.png"
+            alt="The Elite Transfer Market"
+            class="h-10 w-auto object-contain"
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-7 lg:flex">
+
+          <a
+            href="#home"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Home
+          </a>
+
+          <a
+            href="#transfers"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Transfers
+          </a>
+
+          <a
+            href="#players"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Players
+          </a>
+
+          <a
+            href="#clubs"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Clubs
+          </a>
+
+          <a
+            href="#competitions"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Competitions
+          </a>
+
+          <a
+            href="#womens-football"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Women's Football
+          </a>
+
+          <a
+            href="#news"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            News
+          </a>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="flex items-center gap-3">
+
+          <!-- Desktop CTA -->
+          <a
+            href="#transfers"
+            class="hidden items-center gap-2 rounded-full bg-etm-dark px-5 py-3 text-xs font-bold text-white transition hover:bg-black lg:inline-flex"
+          >
+            Explore Transfers
+            <span aria-hidden="true" class="text-etm-lime">↗</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <!-- Mobile Menu Button -->
+   <button
+  id="menu-button"
+  type="button"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="mobile-menu"
+  class="group flex items-center justify-center bg-transparent p-2 text-black transition md:hidden"
+>
+  <svg
+    id="menu-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    class="h-8 w-8 transition-transform duration-300"
+  >
+    <path id="line-1" d="M3 6h18" class="transition-all duration-300"/>
+    <path id="line-2" d="M3 12h18" class="transition-all duration-300"/>
+    <path id="line-3" d="M3 18h18" class="transition-all duration-300"/>
+  </svg>
+</button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-etm-dark text-white lg:hidden"
+      >
+        <div class="mobile-menu mx-auto max-w-7xl px-5 pb-6 pt-5 sm:px-6">
+
+          <!-- Mobile Menu Heading -->
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+             
+
+              <p class="mt-1 text-sm text-white/60">
+                The Elite Transfer Market
+              </p>
+            </div>
+
+            <span class="rounded-full border border-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/60">
+              African Football
+            </span>
+          </div>
+
+          <!-- Main Links -->
+          <div class="border-t border-white/10">
+
+            <a
+              href="#home"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Home
+              <span class="text-etm-lime">↗</span>
+            </a>
+
+            <a
+              href="#transfers"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Transfers
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#players"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Players
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#clubs"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Clubs
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#competitions"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Competitions
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#womens-football"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Women's Football
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#news"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              News
+              <span class="text-white/30">↗</span>
+            </a>
+
+          </div>
+
+          <!-- African Countries -->
+          <div class="mt-7">
+
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white/50">
+                Explore by country
+              </h2>
+
+              <span class="text-xs text-white/30">Africa</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+
+              <a
+                href="#nigeria"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="ni.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Nigeria</span>
+              </a>
+
+              <a
+                href="#ghana"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="gha.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Ghana</span>
+              </a>
+
+              <a
+                href="#senegal"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="sen.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Senegal</span>
+              </a>
+
+              <a
+                href="#morocco"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="mor.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Morocco</span>
+              </a>
+
+              <a
+                href="#egypt"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="egy.png
+                 "
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Egypt</span>
+              </a>
+
+              <a
+                href="#south-africa"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="sout.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">South Africa</span>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Competitions -->
+          <div class="mt-7">
+
+            <h2 class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/50">
+              Featured competitions
+            </h2>
+
+            <div class="space-y-3">
+
+              <a
+                href="#caf-champions-league"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 p-3 transition hover:bg-white/[0.05]"
+              >
+                <img
+                  src="cha.png"
+                  alt=""
+                  class="h-11 w-11 rounded-lg bg-white/5 object-contain p-1"
+                >
+
+                <div>
+                  <p class="text-sm font-semibold">CAF Champions League</p>
+                  <p class="mt-1 text-xs text-white/45">African club football</p>
+                </div>
+
+                <span class="ml-auto text-white/40">↗</span>
+              </a>
+
+              <a
+                href="#afcon"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 p-3 transition hover:bg-white/[0.05]"
+              >
+                <img
+                  src="caf.png"
+                  alt=""
+                  class="h-11 w-11 rounded-lg bg-white/5 object-contain p-1"
+                >
+
+                <div>
+                  <p class="text-sm font-semibold">Africa Cup of Nations</p>
+                  <p class="mt-1 text-xs text-white/45">International football</p>
+                </div>
+
+                <span class="ml-auto text-white/40">↗</span>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Mobile CTA -->
+          <a
+            href="#transfers"
+            class="mobile-nav-link mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-etm-lime px-5 py-4 text-sm font-extrabold text-etm-dark transition hover:bg-lime-300"
+          >
+            Explore Transfers
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <!-- Menu Footer -->
+          <div class="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+            <p class="text-xs text-white/40">
+              African football. One market.
+            </p>
+
+           
+          </div>
+
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+
+
+<!-- ETM HERO / LATEST NEWS -->
+<section id="home" class="bg-[#f5f6f3] px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8">
+
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section Heading -->
+    <div class="mb-6 flex items-end justify-between gap-4 sm:mb-8">
+      <div>
+        <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 sm:text-xs">
+          The latest in African football
+        </p>
+
+  
+      </div>
+
+     
+    </div>
+
+    <!-- Featured Story -->
+    <div
+      id="hero-carousel"
+      class="relative overflow-hidden rounded-2xl bg-[#101310] sm:rounded-3xl"
+    >
+
+<!-- Story Image -->
+<div class="relative aspect-[4/5] w-full sm:aspect-[16/8] lg:aspect-[16/6]">
+
+  <img
+    id="hero-image"
+    src="os.jpeg"
+    alt="Football news featured story"
+    class="absolute inset-0 h-full w-full object-cover lg:object-contain"
+  >
+
+
+        <!-- Image Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent"></div>
+
+        
+
+        <!-- Story Content -->
+        <div class="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-8 lg:p-10">
+
+          <div class="max-w-2xl">
+
+            <p
+              id="hero-date"
+              class="mb-3 text-[10px] font-medium uppercase tracking-wider text-white/65 sm:text-xs"
+            >
+              ETM Football
+            </p>
+
+            <h2
+              id="hero-title"
+              class="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
+            >
+              Every move tells a story.
+            </h2>
+
+            <p
+              id="hero-description"
+              class="mt-3 max-w-lg text-sm leading-6 text-white/75 sm:mt-4 sm:text-base"
+            >
+              The latest transfers, rising talents and stories shaping African football.
+            </p>
+
+            <a
+              id="hero-link"
+              href="#news"
+              class="mt-5 inline-flex items-center gap-3 text-sm font-bold text-white transition hover:text-[#b7ff3c] sm:mt-7"
+            >
+              Read story
+              <span aria-hidden="true" class="text-lg">↗</span>
+            </a>
+
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="hidden shrink-0 items-center gap-2 sm:flex">
+
+            <button
+              id="hero-prev"
+              type="button"
+              aria-label="Previous story"
+              class="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white transition hover:bg-white hover:text-black"
+            >
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" stroke="currentColor" stroke-width="1.8">
+                <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <button
+              id="hero-next"
+              type="button"
+              aria-label="Next story"
+              class="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white transition hover:bg-[#b7ff3c] hover:text-black hover:border-[#b7ff3c]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" stroke="currentColor" stroke-width="1.8">
+                <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Carousel Progress -->
+      <div class="flex items-center justify-between gap-4 border-t border-white/10 bg-[#101310] px-5 py-4 sm:px-8">
+
+        <div
+          id="hero-dots"
+          class="flex items-center gap-2"
+          aria-label="Choose a featured story"
+        ></div>
+
+        <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/40 sm:text-xs">
+          Featured stories
+        </p>
+
+      </div>
+    </div>
+
+    <!-- Latest News Feed -->
+    <div id="news" class="mt-10 sm:mt-14">
+
+      <div class="mb-5 flex items-center justify-between border-b border-black/10 pb-4 sm:mb-6">
+        <h2 class="text-lg font-extrabold tracking-tight sm:text-2xl">
+          Latest news
+        </h2>
+
+        <span class="text-xs text-black/45">
+          Across African football
+        </span>
+      </div>
+
+      <!-- News Grid -->
+      <div class="grid grid-cols-1 gap-x-8 md:grid-cols-2">
+
+        <!-- News Item 1 -->
+        <a
+          href="#story-1"
+          class="group flex gap-4 border-b border-black/10 py-5 first:pt-0"
+        >
+          <div class="aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-xl bg-[#e4e6e0] sm:w-36">
+            <img
+              src="osi.jpeg"
+              alt="Football transfer story"
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+            >
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col justify-center">
+            <p class="mb-2 text-[10px] font-bold uppercase tracking-wider text-black/45">
+              Transfers
+            </p>
+
+            <h3 class="text-sm font-bold leading-5 text-[#151817] transition group-hover:text-black/60 sm:text-base sm:leading-6">
+              Transfer rumours and deals to watch
+            </h3>
+
+            <p class="mt-2 text-xs text-black/45">Transfer desk</p>
+          </div>
+        </a>
+
+        <!-- News Item 2 -->
+        <a
+          href="#story-2"
+          class="group flex gap-4 border-b border-black/10 py-5"
+        >
+          <div class="aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-xl bg-[#e4e6e0] sm:w-36">
+            <img
+              src="bro.jpeg"
+              alt="African football player"
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+            >
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col justify-center">
+            <p class="mb-2 text-[10px] font-bold uppercase tracking-wider text-black/45">
+              Players
+            </p>
+
+            <h3 class="text-sm font-bold leading-5 text-[#151817] transition group-hover:text-black/60 sm:text-base sm:leading-6">
+              The African talents attracting attention
+            </h3>
+
+            <p class="mt-2 text-xs text-black/45">Player watch</p>
+          </div>
+        </a>
+
+        <!-- News Item 3 -->
+        <a
+          href="#story-3"
+          class="group flex gap-4 border-b border-black/10 py-5"
+        >
+          <div class="aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-xl bg-[#e4e6e0] sm:w-36">
+            <img
+              src="simba2.webp"
+              alt="African football club"
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+            >
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col justify-center">
+            <p class="mb-2 text-[10px] font-bold uppercase tracking-wider text-black/45">
+              Clubs
+            </p>
+
+            <h3 class="text-sm font-bold leading-5 text-[#151817] transition group-hover:text-black/60 sm:text-base sm:leading-6">
+              What's happening across African clubs
+            </h3>
+
+            <p class="mt-2 text-xs text-black/45">Club news</p>
+          </div>
+        </a>
+
+        <!-- News Item 4 -->
+        <a
+          href="#story-4"
+          class="group flex gap-4 border-b border-black/10 py-5"
+        >
+          <div class="aspect-[4/3] w-28 shrink-0 overflow-hidden rounded-xl bg-[#e4e6e0] sm:w-36">
+            <img
+              src="afri.jpeg"
+              alt="African football competition"
+              loading="lazy"
+              class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+            >
+          </div>
+
+          <div class="flex min-w-0 flex-1 flex-col justify-center">
+            <p class="mb-2 text-[10px] font-bold uppercase tracking-wider text-black/45">
+              Competitions
+            </p>
+
+            <h3 class="text-sm font-bold leading-5 text-[#151817] transition group-hover:text-black/60 sm:text-base sm:leading-6">
+              Results and stories from the latest matches
+            </h3>
+
+            <p class="mt-2 text-xs text-black/45">Match centre</p>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- View More -->
+      <div class="mt-7">
+        <a
+          href="#all-news"
+          class="inline-flex items-center gap-3 rounded-full border border-black/15 px-5 py-3 text-sm font-bold transition hover:border-black hover:bg-black hover:text-white"
+        >
+          View all news
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ETM Fixtures -->
+<section id="fixtures" class="bg-[#f5f6f3] px-4 py-12 text-[#151817] sm:px-6 sm:py-16 lg:px-8">
+  <div class="mx-auto max-w-6xl">
+
+    <!-- Heading -->
+    <div class="mb-8 flex items-end justify-between border-b border-black/10 pb-5 sm:mb-10">
+      <div>
+      <h2 class="text-3xl font-semibold leading-[1.2] tracking-normal text-[#151817] sm:text-[38px] sm:leading-tight">
+  MATCHDAY<span class="ml-1 text-[#789b45]">.</span>
+</h2>
+        <p class="mt-2 text-sm text-[#737873]">
+          Recent Results 
+        </p>
+      </div>
+
+    <a href="#all-fixtures"
+   class="inline-flex items-center justify-center rounded-md border border-[#dfe2dc] px-4 py-2 text-[13px] font-medium text-[#252925] transition-colors duration-200 hover:border-[#b7ff3c] hover:bg-[#b7ff3c] hover:text-[#151817]">
+  All matches
+</a>
+    </div>
+
+    <!-- Competition -->
+    <div class="overflow-hidden rounded-lg border border-black/10 bg-white">
+
+    <div class="flex items-center gap-4 border-b border-[#e9eae6] px-5 py-5 sm:px-7 sm:py-6">
+
+  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#f6f7f4] p-2">
+    <img
+      src="cara.png"
+      alt="Carabao Cup"
+      class="h-full w-full object-contain"
+      onerror="this.parentElement.style.display='none'"
+    >
+  </div>
+
+  <div class="min-w-0">
+    <h3 class="text-[17px] font-semibold leading-snug tracking-[-0.3px] text-[#171a17] sm:text-lg">
+      Carabao Cup
+    </h3>
+
+    <p class="mt-1.5 text-[12px] font-medium leading-none tracking-[0.2px] text-[#777d76]">
+      England <span class="mx-1 text-[#b7bbB5]">/</span> EFL
+    </p>
+  </div>
+
+</div>
+
+      <!-- Yesterday -->
+      <div>
+        <div class="border-b border-black/[0.06] bg-[#fafaf8] px-4 py-3 sm:px-6">
+          <h4 class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#777c77]">
+            Yesterday
+          </h4>
+        </div>
+
+        <div class="divide-y divide-black/[0.07]">
+
+          <!-- Match row -->
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Man City</span>
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t43.png"
+                   alt="Manchester City" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="flex min-h-[42px] items-center justify-center rounded-md border border-black/10 bg-[#fafaf8] px-2">
+              <time class="whitespace-nowrap text-[14px] font-bold tabular-nums tracking-wide sm:text-[15px]">20:30</time>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t36.png"
+                   alt="Brighton" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Brighton</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Bournemouth</span>
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t91.png"
+                   alt="Bournemouth" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="flex min-h-[42px] items-center justify-center rounded-md border border-black/10 bg-[#fafaf8] px-2">
+              <time class="whitespace-nowrap text-[14px] font-bold tabular-nums tracking-wide sm:text-[15px]">20:45</time>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t7.png"
+                   alt="Aston Villa" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Aston Villa</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Fulham</span>
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t54.png"
+                   alt="Fulham" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="flex min-h-[42px] items-center justify-center rounded-md border border-black/10 bg-[#fafaf8] px-2">
+              <time class="whitespace-nowrap text-[14px] font-bold tabular-nums tracking-wide sm:text-[15px]">20:45</time>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t31.png"
+                   alt="Crystal Palace" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Crystal Palace</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Sunderland</span>
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t56.png"
+                   alt="Sunderland" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="flex min-h-[42px] items-center justify-center rounded-md border border-black/10 bg-[#fafaf8] px-2">
+              <time class="whitespace-nowrap text-[14px] font-bold tabular-nums tracking-wide sm:text-[15px]">20:45</time>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t94.png"
+                   alt="Brentford" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Brentford</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Liverpool</span>
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t14.png"
+                   alt="Liverpool" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="flex min-h-[42px] items-center justify-center rounded-md border border-black/10 bg-[#fafaf8] px-2">
+              <time class="whitespace-nowrap text-[14px] font-bold tabular-nums tracking-wide sm:text-[15px]">21:00</time>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t8.png"
+                   alt="Chelsea" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Chelsea</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="border-t border-black/10">
+        <div class="border-b border-black/[0.06] bg-[#fafaf8] px-4 py-3 sm:px-6">
+          <h4 class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#777c77]">
+            Tue, 27 Oct
+          </h4>
+        </div>
+
+        <div class="divide-y divide-black/[0.07]">
+
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Bradford</span>
+              <img src="bra.png"
+                   alt="Bradford City" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="text-center">
+              <div class="flex min-h-[42px] items-center justify-center gap-3 rounded-md bg-[#f2f3ef] px-2 text-[16px] font-bold tabular-nums">
+                <span>2</span><span class="text-black/25">–</span><span>0</span>
+              </div>
+              <p class="mt-2 text-[10px] font-medium text-[#777c77]">Full time</p>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://crests.football-data.org/1076.png"
+                   alt="Peterborough United" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Peterborough</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-[minmax(0,1fr)_76px_minmax(0,1fr)] items-center gap-3 px-4 py-5 sm:grid-cols-[minmax(0,1fr)_100px_minmax(0,1fr)] sm:px-8 sm:py-6">
+            <div class="flex min-w-0 items-center justify-end gap-3">
+              <span class="truncate text-right text-[13px] font-semibold sm:text-[15px]">Fleetwood</span>
+              <img src="https://crests.football-data.org/1125.png"
+                   alt="Fleetwood Town" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+            </div>
+
+            <div class="text-center">
+              <div class="flex min-h-[42px] items-center justify-center gap-3 rounded-md bg-[#f2f3ef] px-2 text-[16px] font-bold tabular-nums">
+                <span>1</span><span class="text-black/25">–</span><span>1</span>
+              </div>
+              <p class="mt-2 text-[10px] font-medium text-[#777c77]">Full time</p>
+            </div>
+
+            <div class="flex min-w-0 items-center gap-3">
+              <img src="https://resources.premierleague.com/premierleague/badges/50/t3.png"
+                   alt="Arsenal" class="h-8 w-8 shrink-0 object-contain sm:h-9 sm:w-9">
+              <span class="truncate text-[13px] font-semibold sm:text-[15px]">Arsenal</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="all-fixtures" class="border-t border-black/10 px-4 py-4 text-center">
+        <a href="#fixtures"
+           class="text-sm font-semibold text-[#454a45] transition hover:text-black">
+          View all matches
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="valuable-players" class="bg-white px-5 py-16 sm:px-8 sm:py-20">
+  <div class="mx-auto max-w-7xl">
+
+    <!-- Section heading -->
+    <div class="mb-8 flex items-end justify-between gap-4 border-b border-[#e9eae6] pb-5">
+      <div>
+       <h2
+  class="text-[32px] font-bold leading-[1.15] tracking-[-1.2px] text-[#171a17] sm:text-[40px] sm:tracking-[-1.6px]"
+>
+  Top Players<span class="text-[#789b45]">.</span>
+</h2>
+        <p class="mt-2 text-sm leading-relaxed text-[#777d76]">
+          Most Valuable Players
+        </p>
+      </div>
+
+      <a
+        href="#all-players"
+        class="mb-1 inline-flex shrink-0 items-center rounded-md border border-[#dfe2dc] px-4 py-2 text-[13px] font-medium text-[#252925] transition-colors hover:border-[#b7ff3c] hover:bg-[#b7ff3c]"
+      >
+        View all
+      </a>
+    </div>
+
+    <!-- Position filters -->
+    <div class="mb-7 flex gap-2 overflow-x-auto pb-2">
+      <button class="shrink-0 rounded-md bg-[#151817] px-4 py-2 text-sm font-medium text-white">
+        All positions
+      </button>
+      <button class="shrink-0 rounded-md border border-[#e5e7e2] px-4 py-2 text-sm text-[#555b55] transition-colors hover:bg-[#f5f6f3]">
+        Forwards
+      </button>
+      <button class="shrink-0 rounded-md border border-[#e5e7e2] px-4 py-2 text-sm text-[#555b55] transition-colors hover:bg-[#f5f6f3]">
+        Midfielders
+      </button>
+      <button class="shrink-0 rounded-md border border-[#e5e7e2] px-4 py-2 text-sm text-[#555b55] transition-colors hover:bg-[#f5f6f3]">
+        Defenders
+      </button>
+      <button class="shrink-0 rounded-md border border-[#e5e7e2] px-4 py-2 text-sm text-[#555b55] transition-colors hover:bg-[#f5f6f3]">
+        Goalkeepers
+      </button>
+    </div>
+
+    <!-- Player cards go here -->
+<!-- MOST VALUABLE PLAYERS -->
+<section id="valuable-players" class="w-full bg-white py-14 sm:py-16">
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+   
+
+<!-- Table header -->
+<div
+  class="grid grid-cols-[minmax(0,1fr)_32px_88px] items-center gap-3 border-b border-[#e8eae5] px-3 py-3.5 sm:grid-cols-[minmax(0,1fr)_44px_132px] sm:gap-5 sm:px-5 sm:py-4"
+>
+<span
+  class="text-[13px] font-semibold tracking-normal text-[#292d28] sm:text-[14px]"
+>
+  Player
+</span>
+
+<span
+  class="text-center text-[13px] font-semibold tracking-normal text-[#292d28] sm:text-[14px]"
+>
+  Club
+</span>
+
+<span
+  class="text-right text-[13px] font-semibold tracking-[-0.2px] text-[#292d28] sm:text-[14px]"
+>
+  Market value
+</span>
+</div>
+    <!-- Player list -->
+    <div id="valuable-player-list" class="divide-y divide-[#eceee9]">
+
+      <!-- Lamine Yamal -->
+    <article
+  data-player-position="Forward"
+  class="grid min-h-[100px] grid-cols-[56px_minmax(0,1fr)_32px_88px] items-center gap-3 border-b border-[#eceee9] px-3 py-4 transition-colors hover:bg-[#fafbf8] sm:min-h-[112px] sm:grid-cols-[72px_minmax(0,1fr)_44px_132px] sm:gap-5 sm:px-5 sm:py-5"
+>
+  <!-- Player image -->
+  <img
+    src="lam.jpeg"
+    alt="Lamine Yamal"
+    loading="lazy"
+    class="h-[72px] w-[56px] rounded object-cover object-top sm:h-[88px] sm:w-[72px]"
+  >
+
+  <!-- Player details -->
+  <div class="min-w-0">
+    <a
+      href="#"
+      class="block text-[15px] font-semibold leading-snug tracking-[-0.3px] text-[#171a17] hover:text-[#607d35] sm:text-[18px] sm:leading-6"
+    >
+      Lamine Yamal
+    </a>
+
+    <p
+      class="mt-2 text-[12px] font-normal leading-4 text-[#777d76] sm:mt-1.5 sm:text-[13px]"
+    >
+      Right Winger
+    </p>
+  </div>
+
+  <!-- Club logo -->
+  <div class="flex items-center justify-center">
+    <img
+      src="https://tmssl.akamaized.net/images/wappen/head/131.png"
+      alt="Barcelona"
+      loading="lazy"
+      class="h-7 w-7 object-contain sm:h-9 sm:w-9"
+    >
+  </div>
+
+  <!-- Market value -->
+  <div class="min-w-0 text-right">
+    <p
+      class="whitespace-nowrap text-[15px] font-semibold leading-5 tracking-[-0.4px] text-[#20231f] sm:text-[21px] sm:leading-7 sm:tracking-[-0.6px]"
+    >
+      €220m
+    </p>
+
+    <p
+      class="mt-1 text-[10px] font-normal leading-4 text-[#858a83] sm:text-[11px]"
+    >
+      Market value
+    </p>
+  </div>
+</article>
+
+<!-- Kylian Mbappé -->
+<article
+  data-player-position="Forward"
+  class="grid min-h-[100px] grid-cols-[56px_minmax(0,1fr)_32px_88px] items-center gap-3 border-b border-[#eceee9] px-3 py-4 transition-colors hover:bg-[#fafbf8] sm:min-h-[112px] sm:grid-cols-[72px_minmax(0,1fr)_44px_132px] sm:gap-5 sm:px-5 sm:py-5"
+>
+  <!-- Player image -->
+  <img
+    src="mba.jpeg"
+    alt="Kylian Mbappé"
+    loading="lazy"
+    class="h-[72px] w-[56px] rounded object-cover object-top sm:h-[88px] sm:w-[72px]"
+  >
+
+  <!-- Player details -->
+  <div class="min-w-0">
+    <a
+      href="#"
+      class="block text-[15px] font-semibold leading-snug tracking-[-0.3px] text-[#171a17] transition-colors hover:text-[#607d35] sm:text-[18px] sm:leading-6"
+    >
+      Kylian Mbappé
+    </a>
+
+    <p
+      class="mt-2 text-[12px] font-normal leading-4 text-[#777d76] sm:mt-1.5 sm:text-[13px]"
+    >
+      Centre Forward
+    </p>
+  </div>
+
+  <!-- Club logo -->
+  <div class="flex items-center justify-center">
+    <img
+      src="https://tmssl.akamaized.net/images/wappen/head/418.png"
+      alt="Real Madrid"
+      loading="lazy"
+      class="h-7 w-7 object-contain sm:h-9 sm:w-9"
+    >
+  </div>
+
+  <!-- Market value -->
+  <div class="min-w-0 text-right">
+    <p
+      class="whitespace-nowrap text-[15px] font-semibold leading-5 tracking-[-0.4px] text-[#20231f] sm:text-[21px] sm:leading-7 sm:tracking-[-0.6px]"
+    >
+      €200m
+    </p>
+
+    <p
+      class="mt-1 text-[10px] font-normal leading-4 text-[#858a83] sm:text-[11px]"
+    >
+      Market value
+    </p>
+  </div>
+</article>
+
+<!-- Jude Bellingham -->
+<article
+  data-player-position="Midfield"
+  class="grid min-h-[100px] grid-cols-[56px_minmax(0,1fr)_32px_88px] items-center gap-3 border-b border-[#eceee9] px-3 py-4 transition-colors hover:bg-[#fafbf8] sm:min-h-[112px] sm:grid-cols-[72px_minmax(0,1fr)_44px_132px] sm:gap-5 sm:px-5 sm:py-5"
+>
+  <!-- Player image -->
+  <img
+    src="https://img.a.transfermarkt.technology/portrait/header/581678-1693987944.jpg"
+    alt="Jude Bellingham"
+    loading="lazy"
+    class="h-[72px] w-[56px] rounded object-cover object-top sm:h-[88px] sm:w-[72px]"
+  >
+
+  <!-- Player details -->
+  <div class="min-w-0">
+    <a
+      href="#"
+      class="block text-[15px] font-semibold leading-snug tracking-[-0.3px] text-[#171a17] transition-colors hover:text-[#607d35] sm:text-[18px] sm:leading-6"
+    >
+      Jude Bell...
+    </a>
+
+    <p
+      class="mt-2 text-[12px] font-normal leading-4 text-[#777d76] sm:mt-1.5 sm:text-[13px]"
+    >
+      Attacking Midfield
+    </p>
+  </div>
+
+  <!-- Club logo -->
+  <div class="flex items-center justify-center">
+    <img
+      src="https://tmssl.akamaized.net/images/wappen/head/418.png"
+      alt="Real Madrid"
+      loading="lazy"
+      class="h-7 w-7 object-contain sm:h-9 sm:w-9"
+    >
+  </div>
+
+  <!-- Market value -->
+  <div class="min-w-0 text-right">
+    <p
+      class="whitespace-nowrap text-[15px] font-semibold leading-5 tracking-[-0.4px] text-[#20231f] sm:text-[21px] sm:leading-7 sm:tracking-[-0.6px]"
+    >
+      €160m
+    </p>
+
+    <p
+      class="mt-1 text-[10px] font-normal leading-4 text-[#858a83] sm:text-[11px]"
+    >
+      Market value
+    </p>
+  </div>
+</article>
+
+
+<!-- Pedri -->
+<article
+  data-player-position="Midfield"
+  class="grid min-h-[100px] grid-cols-[56px_minmax(0,1fr)_32px_88px] items-center gap-3 border-b border-[#eceee9] px-3 py-4 transition-colors hover:bg-[#fafbf8] sm:min-h-[112px] sm:grid-cols-[72px_minmax(0,1fr)_44px_132px] sm:gap-5 sm:px-5 sm:py-5"
+>
+  <!-- Player image -->
+  <img
+    src="ped.jpeg"
+    alt="Pedri"
+    loading="lazy"
+    class="h-[72px] w-[56px] rounded object-cover object-top sm:h-[88px] sm:w-[72px]"
+  >
+
+  <!-- Player details -->
+  <div class="min-w-0">
+    <a
+      href="#"
+      class="block text-[15px] font-semibold leading-snug tracking-[-0.3px] text-[#171a17] transition-colors hover:text-[#607d35] sm:text-[18px] sm:leading-6"
+    >
+      Pedri
+    </a>
+
+    <p
+      class="mt-2 text-[12px] font-normal leading-4 text-[#777d76] sm:mt-1.5 sm:text-[13px]"
+    >
+      Central Midfield
+    </p>
+  </div>
+
+  <!-- Club logo -->
+  <div class="flex items-center justify-center">
+    <img
+      src="https://tmssl.akamaized.net/images/wappen/head/131.png"
+      alt="Barcelona"
+      loading="lazy"
+      class="h-7 w-7 object-contain sm:h-9 sm:w-9"
+    >
+  </div>
+
+  <!-- Market value -->
+  <div class="min-w-0 text-right">
+    <p
+      class="whitespace-nowrap text-[15px] font-semibold leading-5 tracking-[-0.4px] text-[#20231f] sm:text-[21px] sm:leading-7 sm:tracking-[-0.6px]"
+    >
+      €150m
+    </p>
+
+    <p
+      class="mt-1 text-[10px] font-normal leading-4 text-[#858a83] sm:text-[11px]"
+    >
+      Market value
+    </p>
+  </div>
+</article>
+
+     <!-- Vinícius Júnior -->
+<article
+  data-player-position="Forward"
+  class="grid min-h-[100px] grid-cols-[56px_minmax(0,1fr)_32px_88px] items-center gap-3 border-b border-[#eceee9] px-3 py-4 transition-colors hover:bg-[#fafbf8] sm:min-h-[112px] sm:grid-cols-[72px_minmax(0,1fr)_44px_132px] sm:gap-5 sm:px-5 sm:py-5"
+>
+  <!-- Player image -->
+  <img
+    src="vin.jpeg"
+    alt="Vinícius Júnior"
+    loading="lazy"
+    class="h-[72px] w-[56px] rounded object-cover object-top sm:h-[88px] sm:w-[72px]"
+  >
+
+  <!-- Player details -->
+  <div class="min-w-0">
+    <a
+      href="#"
+      class="block text-[15px] font-semibold leading-snug tracking-[-0.3px] text-[#171a17] transition-colors hover:text-[#607d35] sm:text-[18px] sm:leading-6"
+    >
+      Vinícius Júnior
+    </a>
+
+    <p
+      class="mt-2 text-[12px] font-normal leading-4 text-[#777d76] sm:mt-1.5 sm:text-[13px]"
+    >
+      Left Winger
+    </p>
+  </div>
+
+  <!-- Club logo -->
+  <div class="flex items-center justify-center">
+    <img
+      src="https://tmssl.akamaized.net/images/wappen/head/418.png"
+      alt="Real Madrid"
+      loading="lazy"
+      class="h-7 w-7 object-contain sm:h-9 sm:w-9"
+    >
+  </div>
+
+  <!-- Market value -->
+  <div class="min-w-0 text-right">
+    <p
+      class="whitespace-nowrap text-[15px] font-semibold leading-5 tracking-[-0.4px] text-[#20231f] sm:text-[21px] sm:leading-7 sm:tracking-[-0.6px]"
+    >
+      €130m
+    </p>
+
+    <p
+      class="mt-1 text-[10px] font-normal leading-4 text-[#858a83] sm:text-[11px]"
+    >
+      Market value
+    </p>
+  </div>
+</article>
+    </div>
+
+    <!-- Footer link -->
+   <a
+  href="#all-players"
+  class="mt-5 flex items-center justify-between rounded-md border border-[#e1e4dc] px-4 py-3.5 text-[13px] font-medium text-[#292d28] transition-colors duration-200 hover:border-[#cbd2c2] hover:bg-[#f7f8f4] sm:mt-6 sm:px-5"
+>
+  <span>Explore the full player rankings</span>
+  <span aria-hidden="true" class="text-base leading-none text-[#789b45]">→</span>
+</a>
+
+  </div>
+</section>
+
+
+
+   <!-- TOP 10 CLUBS -->
+<section class="w-full overflow-hidden bg-white font-['Roboto',Arial,sans-serif] text-[#20231f]">
+
+  <!-- Table wrapper -->
+  <div class="w-full">
+
+    <!-- Table title -->
+    <div class="bg-[#101b13] px-4 py-4 sm:px-6 sm:py-5">
+    <div class="flex items-center justify-between gap-4">
+  <div class="min-w-0">
+   
+
+<h2 class="text-[27px] font-bold leading-tight tracking-normal text-white sm:text-[34px]">
+  Top 10 Clubs<span class="text-[#a4c96c]">.</span>
+</h2>
+  </div>
+
+  <a
+    href="#"
+    class="inline-flex shrink-0 items-center gap-2 rounded-md border border-white/15 px-3 py-2 text-[12px] font-semibold text-[#d5e5c2] transition-all duration-200 hover:border-[#a4c96c]/50 hover:bg-white/5 hover:text-white sm:px-4 sm:py-2.5 sm:text-[13px]"
+  >
+    View all
+    <span class="text-base leading-none transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">›</span>
+  </a>
+</div>
+
+      
+      </div>
+    </div>
+
+    <!-- Responsive table -->
+    <div class="w-full overflow-x-auto">
+      <table class="w-full min-w-[340px] table-fixed border-collapse">
+
+        <!-- Table headings -->
+        <thead>
+          <tr class="border-b border-[#e7e9e4] bg-[#f5f6f3]">
+            <th class="w-[42px] px-2 py-3 text-center text-[11px] font-semibold text-[#6f756c] sm:w-[54px] sm:py-4 sm:text-[12px]">
+              #
+            </th>
+
+            <th class="px-2 py-3 text-left text-[12px] font-semibold text-[#353a33] sm:px-4 sm:py-4 sm:text-[13px]">
+              Club
+            </th>
+
+            <th class="w-[58px] px-1 py-3 text-center text-[11px] font-semibold text-[#6f756c] sm:w-[80px] sm:py-4 sm:text-[12px]">
+              Played
+            </th>
+
+            <th class="w-[48px] px-1 py-3 text-center text-[11px] font-semibold text-[#6f756c] sm:w-[64px] sm:py-4 sm:text-[12px]">
+              GD
+            </th>
+
+            <th class="w-[48px] px-1 py-3 text-center text-[11px] font-semibold text-[#6f756c] sm:w-[64px] sm:py-4 sm:text-[12px]">
+              Pts
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="text-[13px] sm:text-[14px]">
+
+          <!-- 1. Real Madrid -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="bg-[#e6efd9] px-2 py-3.5 text-center text-[14px] font-bold tabular-nums text-[#42612c] sm:py-4 sm:text-[15px]">1</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/418.png" alt="Real Madrid crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Real Madrid</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+14</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">21</td>
+          </tr>
+
+          <!-- 2. Barcelona -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="bg-[#e6efd9] px-2 py-3.5 text-center text-[14px] font-bold tabular-nums text-[#42612c] sm:py-4 sm:text-[15px]">2</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/131.png" alt="Barcelona crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Barcelona</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+13</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">19</td>
+          </tr>
+
+          <!-- 3. Manchester City -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="bg-[#e6efd9] px-2 py-3.5 text-center text-[14px] font-bold tabular-nums text-[#42612c] sm:py-4 sm:text-[15px]">3</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/281.png" alt="Manchester City crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Manchester City</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+11</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">18</td>
+          </tr>
+
+          <!-- 4. Arsenal -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="bg-[#e6efd9] px-2 py-3.5 text-center text-[14px] font-bold tabular-nums text-[#42612c] sm:py-4 sm:text-[15px]">4</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/11.png" alt="Arsenal crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Arsenal</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+9</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">17</td>
+          </tr>
+
+          <!-- 5. Liverpool -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="px-2 py-3.5 text-center text-[14px] font-semibold tabular-nums text-[#666c63] sm:py-4 sm:text-[15px]">5</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/31.png" alt="Liverpool crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Liverpool</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+8</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">16</td>
+          </tr>
+
+          <!-- 6. Bayern Munich -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="px-2 py-3.5 text-center text-[14px] font-semibold tabular-nums text-[#666c63] sm:py-4 sm:text-[15px]">6</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/27.png" alt="Bayern Munich crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Bayern Munich</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+15</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">15</td>
+          </tr>
+
+          <!-- 7. Paris Saint-Germain -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="px-2 py-3.5 text-center text-[14px] font-semibold tabular-nums text-[#666c63] sm:py-4 sm:text-[15px]">7</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/583.png" alt="Paris Saint-Germain crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Paris Saint-Germain</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+7</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">14</td>
+          </tr>
+
+          <!-- 8. Chelsea -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="px-2 py-3.5 text-center text-[14px] font-semibold tabular-nums text-[#666c63] sm:py-4 sm:text-[15px]">8</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/5.png" alt="Chelsea crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Chelsea</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+5</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">13</td>
+          </tr>
+
+          <!-- 9. Juventus -->
+          <tr class="border-b border-[#eceee9] transition-colors hover:bg-[#f8faf5]">
+            <td class="px-2 py-3.5 text-center text-[14px] font-semibold tabular-nums text-[#666c63] sm:py-4 sm:text-[15px]">9</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/11.png" alt="Juventus crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Juventus</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+4</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">12</td>
+          </tr>
+
+          <!-- 10. Borussia Dortmund -->
+          <tr class="transition-colors hover:bg-[#f8faf5]">
+            <td class="px-2 py-3.5 text-center text-[14px] font-semibold tabular-nums text-[#666c63] sm:py-4 sm:text-[15px]">10</td>
+            <td class="px-2 py-3 sm:px-4 sm:py-4">
+              <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
+                <img src="https://tmssl.akamaized.net/images/wappen/head/16.png" alt="Borussia Dortmund crest" loading="lazy" class="h-7 w-7 shrink-0 object-contain sm:h-9 sm:w-9">
+                <span class="truncate font-semibold tracking-[-0.2px] text-[#242822] sm:text-[15px]">Borussia Dortmund</span>
+              </div>
+            </td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">8</td>
+            <td class="px-1 py-3.5 text-center font-medium tabular-nums text-[#51574e] sm:py-4">+3</td>
+            <td class="px-1 py-3.5 text-center font-bold tabular-nums text-[#242822] sm:py-4">11</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</section>  
+    
+
+
+
+
+
+<!-- POSITION FILTERS -->
+<script>
+  const positionFilters = document.querySelectorAll(".position-filter");
+  const valuablePlayers = document.querySelectorAll("[data-player-position]");
+
+  positionFilters.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedPosition = button.dataset.position;
+
+      positionFilters.forEach((filter) => {
+        const isActive = filter === button;
+
+        filter.classList.toggle("bg-[#151817]", isActive);
+        filter.classList.toggle("text-white", isActive);
+        filter.classList.toggle("border", !isActive);
+        filter.classList.toggle("border-[#e5e7e2]", !isActive);
+        filter.classList.toggle("text-[#626760]", !isActive);
+      });
+
+      valuablePlayers.forEach((player) => {
+        const playerPosition = player.dataset.playerPosition;
+        const matches =
+          selectedPosition === "all" ||
+          playerPosition === selectedPosition;
+
+        player.hidden = !matches;
+      });
+    });
+  });
+</script>
+
+
+
+
+  </div>
+</section>
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const stories = [
+
+    {
+      date: "ETM TRANSFER DESK",
+      title: "Lookman’s Next Move",
+      description: "African football’s biggest names.",
+      image: "lookman.jpeg",
+      alt: "Ademola Lookman",
+      link: "#transfers"
+    },
+    {
+      date: "PLAYER WATCH",
+      title: "Shaping African Football",
+      description: "Players making waves.",
+      image: "chuk.jpeg",
+      alt: "African football talent",
+      link: "#players"
+    },
+    {
+      date: "AROUND THE CLUBS",
+      title: "Nigeria’s Football Scene",
+      description: "Clubs and stories to follow.",
+      image: "nig.jpeg",
+      alt: "Nigerian football",
+      link: "#clubs"
+    },
+        {
+  date: "WOMEN'S TRANSFER DESK",
+  title: "The Stars on the Move",
+  description: "Women Shaping Football",
+  image: "fin.jpeg",
+  alt: "Asisat Oshoala",
+  link: "#women-transfers"
+},
+    {
+      date: "MATCH CENTRE",
+      title: "Match Headlines",
+      description: "African football highlights.",
+      image: "ain.jpeg",
+      alt: "African football competition",
+      link: "#competitions"
+    }
+  ];
+
+  const image = document.getElementById("hero-image");
+  const date = document.getElementById("hero-date");
+  const title = document.getElementById("hero-title");
+  const description = document.getElementById("hero-description");
+  const link = document.getElementById("hero-link");
+  const dotsContainer = document.getElementById("hero-dots");
+  const previousButton = document.getElementById("hero-prev");
+  const nextButton = document.getElementById("hero-next");
+  const carousel = document.getElementById("hero-carousel");
+
+  if (
+    !image ||
+    !date ||
+    !title ||
+    !description ||
+    !link ||
+    !dotsContainer
+  ) {
+    console.error("ETM: Featured carousel elements are missing.");
+    return;
+  }
+
+  let currentIndex = 0;
+  let autoplay = null;
+  const interval = 6000;
+
+  // Build progress dots.
+  stories.forEach((story, index) => {
+    const dot = document.createElement("button");
+
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Show featured story ${index + 1}`);
+    dot.className = "h-2 rounded-full transition-all duration-300";
+
+    dot.addEventListener("click", () => {
+      showStory(index);
+      restartAutoplay();
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  function showStory(index) {
+    currentIndex = (index + stories.length) % stories.length;
+
+    const story = stories[currentIndex];
+
+    image.style.opacity = "0";
+
+    window.setTimeout(() => {
+      date.textContent = story.date;
+      title.textContent = story.title;
+      description.textContent = story.description;
+      link.href = story.link;
+      image.alt = story.alt;
+
+      image.onload = () => {
+        image.style.opacity = "1";
+      };
+
+      image.onerror = () => {
+        image.style.opacity = "1";
+        console.error("ETM: Could not load image:", story.image);
+      };
+
+      image.src = story.image;
+    }, 180);
+
+    [...dotsContainer.children].forEach((dot, dotIndex) => {
+      const active = dotIndex === currentIndex;
+
+      dot.className =
+        "h-2 rounded-full transition-all duration-300 " +
+        (active
+          ? "w-6 bg-[#b7ff3c]"
+          : "w-2 bg-white/30 hover:bg-white/60");
+
+      dot.setAttribute("aria-current", active ? "true" : "false");
+    });
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+
+    if (!document.hidden) {
+      autoplay = window.setInterval(() => {
+        showStory(currentIndex + 1);
+      }, interval);
+    }
+  }
+
+  function stopAutoplay() {
+    if (autoplay !== null) {
+      window.clearInterval(autoplay);
+      autoplay = null;
+    }
+  }
+
+  function restartAutoplay() {
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      startAutoplay();
+    }
+  }
+
+  nextButton?.addEventListener("click", () => {
+    showStory(currentIndex + 1);
+    restartAutoplay();
+  });
+
+  previousButton?.addEventListener("click", () => {
+    showStory(currentIndex - 1);
+    restartAutoplay();
+  });
+
+  carousel?.addEventListener("mouseenter", stopAutoplay);
+  carousel?.addEventListener("mouseleave", restartAutoplay);
+  carousel?.addEventListener("focusin", stopAutoplay);
+  carousel?.addEventListener("focusout", restartAutoplay);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      restartAutoplay();
+    }
+  });
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    startAutoplay();
+  }
+
+  showStory(0);
+});
+</script>
+
+
+
+
+
+  
+
+  <!-- Mobile Menu JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+      if (!menuButton || !mobileMenu || !menuIcon) {
+        console.error("ETM: Mobile navigation elements could not be found.");
+        return;
+      }
+
+      const hamburgerIcon = `
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      `;
+
+      const closeIcon = `
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      `;
+
+      function setMenuState(isOpen) {
+        mobileMenu.classList.toggle("hidden", !isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu"
+        );
+
+        menuIcon.innerHTML = isOpen ? closeIcon : hamburgerIcon;
+      }
+
+      menuButton.addEventListener("click", () => {
+        const isOpen =
+          menuButton.getAttribute("aria-expanded") === "true";
+
+        setMenuState(!isOpen);
+      });
+
+      // Close the menu after a navigation link is selected.
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          setMenuState(false);
+        });
+      });
+
+      // Close the menu when clicking outside it.
+      document.addEventListener("click", (event) => {
+        const isOpen =
+          menuButton.getAttribute("aria-expanded") === "true";
+
+        if (
+          isOpen &&
+          !mobileMenu.contains(event.target) &&
+          !menuButton.contains(event.target)
+        ) {
+          setMenuState(false);
+        }
+      });
+
+      // Close the mobile menu when switching to desktop width.
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1024) {
+          setMenuState(false);
+        }
+      });
+
+      // Close the menu with the Escape key.
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          menuButton.getAttribute("aria-expanded") === "true"
+        ) {
+          setMenuState(false);
+          menuButton.focus();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+<!-- ETM Footer -->
+<footer class="border-t border-[#e8eae5] bg-white text-[#292d28]">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+    <!-- Main Footer -->
+    <div class="grid grid-cols-1 gap-10 py-12 sm:py-14 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-12 lg:py-16">
+
+      <!-- Brand -->
+      <div class="max-w-sm">
+        <a href="/" class="mb-5 inline-flex items-center">
+          <img
+            src="logo.png"
+            alt="Elite Transfer Market"
+            class="h-10 w-auto object-contain"
+          />
+        </a>
+
+     <p class="max-w-[320px] text-[15px] font-normal leading-[1.8] text-[#555b52]">
+  Football transfers, player values and the latest stories from across African football.
+</p>
+
+        <!-- Socials -->
+        <div class="mt-6 flex items-center gap-3">
+
+          <a
+            href="#"
+            aria-label="ETM on X"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[15px] w-[15px]" fill="currentColor" aria-hidden="true">
+              <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.65L5.35 22H2.2l7.25-8.28L1.8 2h6.4l4.43 6.96L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.42L17.8 20Z"/>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            aria-label="ETM on Instagram"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[17px] w-[17px]" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            aria-label="ETM on Facebook"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[17px] w-[17px]" fill="currentColor" aria-hidden="true">
+              <path d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.72V3.13A22.5 22.5 0 0 0 14.2 3c-2.5 0-4.2 1.53-4.2 4.35V9.6H7.2v3.2H10V21h3.4Z"/>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            aria-label="ETM on YouTube"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[17px] w-[17px]" fill="currentColor" aria-hidden="true">
+              <path d="M23.2 6.2a3 3 0 0 0-2.1-2.1C19.2 3.6 12 3.6 12 3.6s-7.2 0-9.1.5A3 3 0 0 0 .8 6.2 31 31 0 0 0 .3 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.1.5 9.1.5s7.2 0 9.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.8 31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+     <!-- Footer Navigation -->
+<div class="grid grid-cols-2 gap-x-6 gap-y-9 sm:gap-x-10 lg:grid-cols-3 lg:gap-12">
+  
+  <!-- Explore -->
+  <div>
+    <h3 class="mb-4 text-sm font-bold text-[#20231f]">
+      Explore
+    </h3>
+    
+    <ul class="space-y-3 text-sm text-[#737970]">
+      <li><a href="#transfers" class="transition-colors duration-200 hover:text-[#607d35]">Latest Transfers</a></li>
+      <li><a href="#players" class="transition-colors duration-200 hover:text-[#607d35]">Players</a></li>
+      <li><a href="#clubs" class="transition-colors duration-200 hover:text-[#607d35]">Clubs</a></li>
+      <li><a href="#competitions" class="transition-colors duration-200 hover:text-[#607d35]">Competitions</a></li>
+      <li><a href="#fixtures" class="transition-colors duration-200 hover:text-[#607d35]">Fixtures &amp; Results</a></li>
+    </ul>
+  </div>
+  
+  <!-- Football -->
+  <div>
+    <h3 class="mb-4 text-sm font-bold text-[#20231f]">
+      Football
+    </h3>
+    
+    <ul class="space-y-3 text-sm text-[#737970]">
+      <li><a href="#african-football" class="transition-colors duration-200 hover:text-[#607d35]">African Football</a></li>
+      <li><a href="#women-football" class="transition-colors duration-200 hover:text-[#607d35]">Women's Football</a></li>
+      <li><a href="#market-values" class="transition-colors duration-200 hover:text-[#607d35]">Market Values</a></li>
+      <li><a href="#rankings" class="transition-colors duration-200 hover:text-[#607d35]">Club Rankings</a></li>
+      <li><a href="#news" class="transition-colors duration-200 hover:text-[#607d35]">Football News</a></li>
+    </ul>
+  </div>
+  
+ 
+  
+</div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col gap-3 border-t border-[#e8eae5] py-5 sm:flex-row sm:items-center sm:justify-between sm:py-6">
+
+      <p class="text-xs leading-5 text-[#858a82]">
+        © <span id="etm-year"></span> Elite Transfer Market. All rights reserved.
+      </p>
+
+      
+
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("etm-year").textContent = new Date().getFullYear();
+</script>
+
+
+</html>

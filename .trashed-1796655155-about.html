@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ETM | The Elite Transfer Market</title>
+
+  <meta
+    name="description"
+    content="The Elite Transfer Market. Follow African football transfers, players, clubs, competitions, and news."
+  >
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  #hero-title {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: clamp(1.65rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: -0.035em;
+    max-width: 650px;
+  }
+  
+  #hero-description {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: 0;
+    max-width: 480px;
+    color: rgba(255, 255, 255, 0.82);
+  }
+  
+  #hero-category,
+  #hero-date {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+  
+  @media (max-width: 640px) {
+    #hero-title {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    
+    #hero-description {
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+    
+    #hero-category,
+    #hero-date {
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+    }
+  }
+</style>
+  
+  
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            etm: {
+              dark: "#0b0d0c",
+              lime: "#b7ff3c",
+              ink: "#151817",
+              soft: "#f5f6f3",
+              muted: "#858b85"
+            }
+          },
+          fontFamily: {
+            sans: ["Roboto", "Arial", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .mobile-menu {
+      transform-origin: top;
+      animation: menuDrop 180ms ease-out;
+    }
+
+    @keyframes menuDrop {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-etm-soft text-etm-ink antialiased">
+
+  <!-- Navigation -->
+  <header class="relative z-50">
+    <nav
+      id="main-navigation"
+      class="border-b border-black/10 bg-white"
+      aria-label="Main navigation"
+    >
+
+      <!-- Navigation Bar -->
+      <div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+
+        <!-- Logo -->
+        <a
+          href="#home"
+          class="flex shrink-0 items-center"
+          aria-label="ETM homepage"
+        >
+          <img
+            src="logo.png"
+            alt="The Elite Transfer Market"
+            class="h-10 w-auto object-contain"
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-7 lg:flex">
+
+          <a
+            href="#home"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Home
+          </a>
+
+          <a
+            href="#transfers"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Transfers
+          </a>
+
+          <a
+            href="#players"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Players
+          </a>
+
+          <a
+            href="#clubs"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Clubs
+          </a>
+
+          <a
+            href="#competitions"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Competitions
+          </a>
+
+          <a
+            href="#womens-football"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            Women's Football
+          </a>
+
+          <a
+            href="#news"
+            class="text-sm font-semibold text-etm-ink transition hover:text-black/60"
+          >
+            News
+          </a>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="flex items-center gap-3">
+
+          <!-- Desktop CTA -->
+          <a
+            href="#transfers"
+            class="hidden items-center gap-2 rounded-full bg-etm-dark px-5 py-3 text-xs font-bold text-white transition hover:bg-black lg:inline-flex"
+          >
+            Explore Transfers
+            <span aria-hidden="true" class="text-etm-lime">↗</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <!-- Mobile Menu Button -->
+   <button
+  id="menu-button"
+  type="button"
+  aria-label="Open menu"
+  aria-expanded="false"
+  aria-controls="mobile-menu"
+  class="group flex items-center justify-center bg-transparent p-2 text-black transition md:hidden"
+>
+  <svg
+    id="menu-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    class="h-8 w-8 transition-transform duration-300"
+  >
+    <path id="line-1" d="M3 6h18" class="transition-all duration-300"/>
+    <path id="line-2" d="M3 12h18" class="transition-all duration-300"/>
+    <path id="line-3" d="M3 18h18" class="transition-all duration-300"/>
+  </svg>
+</button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-etm-dark text-white lg:hidden"
+      >
+        <div class="mobile-menu mx-auto max-w-7xl px-5 pb-6 pt-5 sm:px-6">
+
+          <!-- Mobile Menu Heading -->
+          <div class="mb-5 flex items-center justify-between">
+            <div>
+             
+
+              <p class="mt-1 text-sm text-white/60">
+                The Elite Transfer Market
+              </p>
+            </div>
+
+            <span class="rounded-full border border-white/15 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white/60">
+              African Football
+            </span>
+          </div>
+
+          <!-- Main Links -->
+          <div class="border-t border-white/10">
+
+            <a
+              href="#home"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Home
+              <span class="text-etm-lime">↗</span>
+            </a>
+
+            <a
+              href="#transfers"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Transfers
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#players"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Players
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#clubs"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Clubs
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#competitions"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Competitions
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#womens-football"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              Women's Football
+              <span class="text-white/30">↗</span>
+            </a>
+
+            <a
+              href="#news"
+              class="mobile-nav-link flex items-center justify-between border-b border-white/10 py-4 text-base font-semibold"
+            >
+              News
+              <span class="text-white/30">↗</span>
+            </a>
+
+          </div>
+
+          <!-- African Countries -->
+          <div class="mt-7">
+
+            <div class="mb-4 flex items-center justify-between">
+              <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white/50">
+                Explore by country
+              </h2>
+
+              <span class="text-xs text-white/30">Africa</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+
+              <a
+                href="#nigeria"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="ni.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Nigeria</span>
+              </a>
+
+              <a
+                href="#ghana"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="gha.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Ghana</span>
+              </a>
+
+              <a
+                href="#senegal"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="sen.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Senegal</span>
+              </a>
+
+              <a
+                href="#morocco"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="mor.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Morocco</span>
+              </a>
+
+              <a
+                href="#egypt"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="egy.png
+                 "
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">Egypt</span>
+              </a>
+
+              <a
+                href="#south-africa"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.08]"
+              >
+                <img
+                  src="sout.png"
+                  alt=""
+                  class="h-5 w-7 rounded-sm object-cover"
+                >
+                <span class="text-sm font-medium">South Africa</span>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Competitions -->
+          <div class="mt-7">
+
+            <h2 class="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-white/50">
+              Featured competitions
+            </h2>
+
+            <div class="space-y-3">
+
+              <a
+                href="#caf-champions-league"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 p-3 transition hover:bg-white/[0.05]"
+              >
+                <img
+                  src="cha.png"
+                  alt=""
+                  class="h-11 w-11 rounded-lg bg-white/5 object-contain p-1"
+                >
+
+                <div>
+                  <p class="text-sm font-semibold">CAF Champions League</p>
+                  <p class="mt-1 text-xs text-white/45">African club football</p>
+                </div>
+
+                <span class="ml-auto text-white/40">↗</span>
+              </a>
+
+              <a
+                href="#afcon"
+                class="mobile-nav-link flex items-center gap-3 rounded-xl border border-white/10 p-3 transition hover:bg-white/[0.05]"
+              >
+                <img
+                  src="caf.png"
+                  alt=""
+                  class="h-11 w-11 rounded-lg bg-white/5 object-contain p-1"
+                >
+
+                <div>
+                  <p class="text-sm font-semibold">Africa Cup of Nations</p>
+                  <p class="mt-1 text-xs text-white/45">International football</p>
+                </div>
+
+                <span class="ml-auto text-white/40">↗</span>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Mobile CTA -->
+          <a
+            href="#transfers"
+            class="mobile-nav-link mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-etm-lime px-5 py-4 text-sm font-extrabold text-etm-dark transition hover:bg-lime-300"
+          >
+            Explore Transfers
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <!-- Menu Footer -->
+          <div class="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+            <p class="text-xs text-white/40">
+              African football. One market.
+            </p>
+
+           
+          </div>
+
+        </div>
+      </div>
+
+    </nav>
+  </header>
+  
+ <body>
+   <!-- Player Profile Hero -->
+<section class="relative overflow-hidden bg-[#f5f6f3]">
+
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+
+    <div class="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+
+      <!-- Player Image -->
+      <div class="relative">
+        <div class="relative h-[390px] overflow-hidden rounded-xl bg-[#e8ebe4] sm:h-[520px] lg:h-[590px]">
+
+          <img
+            src="john.jpg"
+            alt="Player portrait"
+            class="h-full w-full object-cover object-top"
+          />
+
+          <!-- Image overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+          <!-- Image label -->
+          <div class="absolute bottom-5 left-5 flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-[#b7ff3c]"></span>
+            <span class="text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+              Player Profile
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Player Information -->
+      <div class="py-2 lg:py-8">
+
+        <!-- Club -->
+        <div class="mb-8 flex items-center gap-3">
+
+          <div class="flex h-12 w-12 items-center justify-center rounded-full border border-[#e3e6df] bg-white p-2">
+            <img
+              src="clu.png"
+              alt="Club logo"
+              class="h-full w-full object-contain"
+            />
+          </div>
+
+          <div>
+          <div>
+  <p class="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#858b85]">
+    Current Club
+  </p>
+  
+  <p class="text-[16px] font-extrabold leading-tight tracking-[-0.035em] text-[#20231f] sm:text-[18px]">
+    Athlétique Villers Semeuse
+  </p>
+</div>
+          </div>
+
+        </div>
+
+<!-- Name -->
+<p class="mb-4 text-[11px] font-bold uppercase tracking-[0.22em] text-[#789b45]">
+  Professional Footballer
+</p>
+
+<h1 class="whitespace-nowrap text-[clamp(2.5rem,6vw,5rem)] font-black leading-none tracking-[-0.055em] text-[#171a17]">
+  EFEKOHA <span class="font-extrabold text-[#789b45]">JOHN</span>
+</h1>
+
+       <p class="mt-6 max-w-lg text-[15px] font-normal leading-[1.85] tracking-[0.005em] text-[#626960] sm:text-[16px]">
+  Discover his journey, playing style, key strengths and the qualities that define his impact on the pitch.
+</p>
+
+<!-- Player Details -->
+<div class="mt-9 grid max-w-lg grid-cols-2 gap-x-8 gap-y-7 border-y border-[#e1e4dd] py-7">
+  
+  <div>
+    <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+      Position
+    </p>
+    <p class="text-[14px] font-bold leading-snug tracking-[-0.02em] text-[#20231f] sm:text-[15px]">
+      Striker / Midfielder
+    </p>
+  </div>
+  
+  <div>
+    <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+      Nationality
+    </p>
+    <p class="text-[14px] font-bold leading-snug tracking-[-0.02em] text-[#20231f] sm:text-[15px]">
+      Nigeria
+    </p>
+  </div>
+  
+  <div>
+    <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+      Age
+    </p>
+    <p class="text-[14px] font-bold leading-snug tracking-[-0.02em] text-[#20231f] sm:text-[15px]">
+      27 Years
+    </p>
+  </div>
+  
+  <div>
+    <p class="mb-2 text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+      Preferred Foot
+    </p>
+    <p class="text-[14px] font-bold leading-snug tracking-[-0.02em] text-[#20231f] sm:text-[15px]">
+      Both
+    </p>
+  </div>
+  
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Player Overview -->
+<section id="player-overview" class="bg-white py-16 sm:py-20">
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+   <!-- Section Heading -->
+<div class="mb-10">
+
+  
+<h2 class="-mt-2 mb-3 text-[34px] font-black leading-[1.05] tracking-[-0.045em] text-[#171a17] sm:text-[42px]">
+  Overview<span class="ml-0.5 font-extrabold text-[#789b45]">.</span>
+</h2>
+
+
+<<<<<<< HEAD
+    
+=======
+     <p class="mt-3 max-w-xl text-[15px] font-normal leading-[1.85] tracking-[0.005em] text-[#626960] sm:text-[16px]">
+  Get inside his game. Explore the skills, instincts and qualities that make him stand out on the pitch.
+</p>
+>>>>>>> e1764c14bab77d45c7a4afe4f35624ad8c205a79
+    </div>
+
+    <!-- Content -->
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
+
+      <!-- Overview -->
+      <div>
+    
+        <div class="max-w-xl space-y-4">
+  <p class="text-[15px] font-normal leading-[1.9] tracking-[0.005em] text-[#555d54] sm:text-[16px]">
+    John Ese Efekoha is a Nigerian forward who can play both as a striker and an attacking midfielder. He is comfortable using either foot, has a strong physical presence, and is effective in aerial challenges.
+  </p>
+  
+  <p class="text-[15px] font-normal leading-[1.9] tracking-[0.005em] text-[#555d54] sm:text-[16px]">
+    His game is built around good stamina, composure on the ball, and the ability to create opportunities in attacking areas. His versatility allows him to contribute in different roles across the forward line.
+  </p>
+</div>
+
+        <p class="mt-4 text-[15px] leading-[1.9] text-[#626960]">
+          His ability to operate across attacking positions gives his team additional options in the final third.
+        </p>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Career History -->
+<section id="career-history" class="bg-[#f5f6f3] py-16 sm:py-20">
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Heading -->
+    <div class="mb-10">
+      <p class="mb-3 text-[11px] font-bold uppercase tracking-[0.18em] text-[#789b45]">
+        Career Journey
+      </p>
+
+      <h2 class="text-[34px] font-black leading-tight tracking-[-0.045em] text-[#171a17] sm:text-[42px]">
+        Former Clubs<span class="text-[#789b45]">.</span>
+      </h2>
+
+      <p class="mt-3 max-w-xl text-[15px] leading-[1.85] text-[#626960] sm:text-[16px]">
+        A look at the clubs that have shaped his journey and development throughout his football career.
+      </p>
+    </div>
+
+    <!-- Club History -->
+    <div class="max-w-4xl">
+
+      <!-- Club 1 -->
+      <div class="group flex gap-5 border-b border-[#e1e4dd] py-6 sm:gap-8">
+
+        <!-- Club Badge -->
+        <div class="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-lg border border-[#e5e8e1] bg-white p-3 sm:h-[82px] sm:w-[82px]">
+          <img
+            src="us.png"
+            alt="Club One badge"
+            class="h-full w-full object-contain"
+          />
+        </div>
+
+        <!-- Club Information -->
+        <div class="min-w-0 flex-1 py-1">
+
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+              Former Club
+            </p>
+
+            <span class="text-[11px] font-semibold text-[#858b85]">
+              2022 – 2023
+            </span>
+          </div>
+
+          <h3 class="mt-2 text-[17px] font-extrabold leading-tight tracking-[-0.025em] text-[#20231f] sm:text-[20px]">
+            US Revin FC (France)
+          </h3>
+
+          <p class="mt-1.5 text-[13px] text-[#737970]">
+            Position: Forward
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Club 2 -->
+      <div class="group flex gap-5 border-b border-[#e1e4dd] py-6 sm:gap-8">
+
+        <div class="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-lg border border-[#e5e8e1] bg-white p-3 sm:h-[82px] sm:w-[82px]">
+          <img
+            src="horse.png"
+            alt="Club Two badge"
+            class="h-full w-full object-contain"
+          />
+        </div>
+
+        <div class="min-w-0 flex-1 py-1">
+
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+              Former Club
+            </p>
+
+            <span class="text-[11px] font-semibold text-[#858b85]">
+              2021 – 2022
+            </span>
+          </div>
+
+          <h3 class="mt-2 text-[17px] font-extrabold leading-tight tracking-[-0.025em] text-[#20231f] sm:text-[20px]">
+            FC Dengeoff Kiev (Ukraine)
+          </h3>
+
+          <p class="mt-1.5 text-[13px] text-[#737970]">
+            Position: Forward
+          </p>
+
+        </div>
+      </div>
+
+  <div class="group flex gap-5 border-b border-[#e1e4dd] py-6 sm:gap-8">
+
+        <div class="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-lg border border-[#e5e8e1] bg-white p-3 sm:h-[82px] sm:w-[82px]">
+          <img
+            src="gad.png"
+            alt="Club Two badge"
+            class="h-full w-full object-contain"
+          />
+        </div>
+
+        <div class="min-w-0 flex-1 py-1">
+
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+              Former Club
+            </p>
+
+            <span class="text-[11px] font-semibold text-[#858b85]">
+              2019 – 2020
+            </span>
+          </div>
+
+          <h3 class="mt-2 text-[17px] font-extrabold leading-tight tracking-[-0.025em] text-[#20231f] sm:text-[20px]">
+            Goddosky FC (Nigeria)
+          </h3>
+
+          <p class="mt-1.5 text-[13px] text-[#737970]">
+            Position: Forward
+          </p>
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!-- Club 3 -->
+      <div class="group flex gap-5 border-b border-[#e1e4dd] py-6 sm:gap-8">
+
+        <div class="flex h-[68px] w-[68px] shrink-0 items-center justify-center rounded-lg border border-[#e5e8e1] bg-white p-3 sm:h-[82px] sm:w-[82px]">
+          <img
+            src="kad.png"
+            alt="Club Three badge"
+            class="h-full w-full object-contain"
+          />
+        </div>
+
+        <div class="min-w-0 flex-1 py-1">
+
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#92988e]">
+              Former Club
+            </p>
+
+            <span class="text-[11px] font-semibold text-[#858b85]">
+              2016 – 2017
+            </span>
+          </div>
+
+          <h3 class="mt-2 text-[17px] font-extrabold leading-tight tracking-[-0.025em] text-[#20231f] sm:text-[20px]">
+            Kaduna United (Nigeria)
+          </h3>
+
+          <p class="mt-1.5 text-[13px] text-[#737970]">
+            Position: Forward
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Player Strengths Section -->
+<section class="bg-[#f5f6f3] py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Player Strengths -->
+    <div>
+
+<!-- Heading -->
+<div class="-mt-3 mb-8">
+  <div class="flex items-center justify-between gap-4">
+    <h3 class="text-[30px] font-extrabold leading-[1.05] tracking-[-0.055em] text-[#171a17] sm:text-[38px]">
+      Playing <span class="font-black text-[#789b45]">Strengths.</span>
+    </h3>
+    
+    <span class="hidden h-px flex-1 bg-[#dfe3d9] sm:block"></span>
+  </div>
+</div>
+
+      <!-- Strength Cards -->
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+        <!-- Strength 1 -->
+        <div class="rounded-lg border border-[#e8ebe4] bg-white p-5 transition-colors duration-200 hover:border-[#cbd5bd]">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#92988e]">
+              01 / ATTACK
+            </span>
+            <span class="flex h-8 w-8 items-center justify-center rounded-md bg-[#edf2e7] text-[#607d35]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                <path d="M5 17L17 5M8 5h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+         <h4 class="text-[18px] font-bold leading-snug tracking-[-0.035em] text-[#20231f] sm:text-[19px]">
+  Attacking Movement
+</h4>
+
+<p class="mt-2.5 max-w-md text-[14px] font-normal leading-[1.75] tracking-[0.005em] text-[#737970] sm:text-[15px]">
+  Uses movement and positioning to find space and offer attacking options.
+</p>
+        </div>
+
+        <!-- Strength 2 -->
+        <div class="rounded-lg border border-[#e8ebe4] bg-white p-5 transition-colors duration-200 hover:border-[#cbd5bd]">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#92988e]">
+              02 / POSITIONING
+            </span>
+            <span class="flex h-8 w-8 items-center justify-center rounded-md bg-[#edf2e7] text-[#607d35]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M12 2v3m0 14v3M2 12h3m14 0h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </div>
+        <h4 class="text-[18px] font-bold leading-snug tracking-[-0.035em] text-[#20231f] sm:text-[19px]">
+  Positional Versatility
+</h4>
+
+<p class="mt-2.5 max-w-md text-[14px] font-normal leading-[1.75] tracking-[0.005em] text-[#737970] sm:text-[15px]">
+  Capable of operating as a striker or attacking midfielder.
+</p>
+        </div>
+
+        <!-- Strength 3 -->
+        <div class="rounded-lg border border-[#e8ebe4] bg-white p-5 transition-colors duration-200 hover:border-[#cbd5bd]">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#92988e]">
+              03 / TECHNICAL
+            </span>
+            <span class="flex h-8 w-8 items-center justify-center rounded-md bg-[#edf2e7] text-[#607d35]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M12 7l3 2v4l-3 2-3-2V9l3-2zm0 8v4m-3-6H5m14 0h-4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        <h4 class="text-[18px] font-bold leading-snug tracking-[-0.035em] text-[#20231f] sm:text-[19px]">
+  Two-Footed Ability
+</h4>
+
+<p class="mt-2.5 max-w-md text-[14px] font-normal leading-[1.75] tracking-[0.005em] text-[#737970] sm:text-[15px]">
+  Comfortable using both feet, offering flexibility in possession and attacking situations.
+</p>
+        </div>
+
+        <!-- Strength 4 -->
+        <div class="rounded-lg border border-[#e8ebe4] bg-white p-5 transition-colors duration-200 hover:border-[#cbd5bd]">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#92988e]">
+              04 / PHYSICAL
+            </span>
+            <span class="flex h-8 w-8 items-center justify-center rounded-md bg-[#edf2e7] text-[#607d35]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                <path d="M7 4v16M17 4v16M4 8h6m4 8h6M4 16h6m4-8h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </div>
+          <h4 class="text-[18px] font-bold leading-snug tracking-[-0.035em] text-[#20231f] sm:text-[19px]">
+  Physical Presence
+</h4>
+
+<p class="mt-2.5 max-w-md text-[14px] font-normal leading-[1.75] tracking-[0.005em] text-[#737970] sm:text-[15px]">
+  Brings physical strength and stamina to attacking duels and match situations.
+</p>
+        </div>
+
+        <!-- Strength 5 -->
+        <div class="rounded-lg border border-[#e8ebe4] bg-white p-5 transition-colors duration-200 hover:border-[#cbd5bd] sm:col-span-2">
+          <div class="mb-5 flex items-center justify-between">
+            <span class="text-[11px] font-bold uppercase tracking-[0.12em] text-[#92988e]">
+              05 / AERIAL
+            </span>
+            <span class="flex h-8 w-8 items-center justify-center rounded-md bg-[#edf2e7] text-[#607d35]">
+              <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+                <path d="M12 20V5m-5 5 5-5 5 5M5 20h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+<h4 class="text-[18px] font-bold leading-snug tracking-[-0.035em] text-[#20231f] sm:text-[19px]">
+  Aerial Ability
+</h4>
+
+<p class="mt-2.5 max-w-lg text-[14px] font-normal leading-[1.75] tracking-[0.005em] text-[#737970] sm:text-[15px]">
+  Effective in aerial challenges, adding another dimension to his attacking presence.
+</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+   
+ 
+ 
+ 
+ 
+ 
+ <!-- Player Gallery Section -->
+<section id="gallery" class="overflow-hidden bg-[#f5f6f3] py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+    <!-- Gallery Heading -->
+<div class="mb-3">
+
+  
+  <h2 class="text-[42px] font-semibold leading-tight tracking-normal text-[#171a17] sm:text-[52px] lg:text-[58px]">
+  Gallery<span class="text-[#789b45]">.</span>
+</h2>
+</div>
+     
+
+
+<!-- Gallery Filters -->
+<div class="mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+  <div class="flex items-center gap-2.5 overflow-x-auto pb-3 sm:flex-wrap sm:overflow-visible sm:pb-0">
+
+    <button type="button" data-filter="all"
+      class="gallery-filter shrink-0 rounded-lg border border-[#789b45] bg-[#789b45] px-5 py-3 text-[13px] font-semibold text-white shadow-sm transition-all duration-200 hover:border-[#607d35] hover:bg-[#607d35] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#789b45]/30 focus:ring-offset-2">
+      All Photos
+    </button>
+
+    <button type="button" data-filter="match"
+      class="gallery-filter shrink-0 rounded-lg border border-[#e3e6df] bg-white px-5 py-3 text-[13px] font-medium text-[#454b43] transition-all duration-200 hover:border-[#607d35] hover:bg-[#607d35] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#789b45]/30 focus:ring-offset-2">
+      Match Action
+    </button>
+
+    <button type="button" data-filter="training"
+      class="gallery-filter shrink-0 rounded-lg border border-[#e3e6df] bg-white px-5 py-3 text-[13px] font-medium text-[#454b43] transition-all duration-200 hover:border-[#607d35] hover:bg-[#607d35] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#789b45]/30 focus:ring-offset-2">
+      Training
+    </button>
+
+    <button type="button" data-filter="portrait"
+      class="gallery-filter shrink-0 rounded-lg border border-[#e3e6df] bg-white px-5 py-3 text-[13px] font-medium text-[#454b43] transition-all duration-200 hover:border-[#607d35] hover:bg-[#607d35] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#789b45]/30 focus:ring-offset-2">
+      Portraits
+    </button>
+
+    <button type="button" data-filter="highlights"
+      class="gallery-filter shrink-0 rounded-lg border border-[#e3e6df] bg-white px-5 py-3 text-[13px] font-medium text-[#454b43] transition-all duration-200 hover:border-[#607d35] hover:bg-[#607d35] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#789b45]/30 focus:ring-offset-2">
+      Highlights
+    </button>
+
+  </div>
+</div>
+
+
+
+
+
+
+    <!-- Gallery Grid -->
+    <div id="player-gallery" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-12">
+
+      <!-- Featured Image -->
+      <div data-category="portrait"
+        class="group relative min-h-[380px] overflow-hidden rounded-xl bg-[#dfe3d9] sm:row-span-2 sm:min-h-[520px] lg:col-span-6 lg:row-span-2">
+
+        <img
+          src="tea.jpg"
+          alt="Player portrait"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-5 left-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+          Player Portrait
+        </span>
+
+        <button type="button" aria-label="View player portrait"
+          class="gallery-view absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-[#789b45]">
+          <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Match Action -->
+      <div data-category="match"
+        class="group relative min-h-[250px] overflow-hidden rounded-xl bg-[#dfe3d9] sm:col-span-1 lg:col-span-6">
+
+        <img
+          src="sho.jpg"
+          alt="Player in match action"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-5 left-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+          Match Action
+        </span>
+
+        <button type="button" aria-label="View match action image"
+          class="gallery-view absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-[#789b45]">
+          <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5" aria-hidden="true">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Training Image -->
+      <div data-category="training"
+        class="group relative min-h-[240px] overflow-hidden rounded-xl bg-[#dfe3d9] lg:col-span-3">
+
+        <img
+          src="joh.jpg"
+          alt="Player during training"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-5 left-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+          Training
+        </span>
+
+        <button type="button" aria-label="View training image"
+          class="gallery-view absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-lg bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-[#789b45]">
+          <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Second Portrait -->
+      <div data-category="portrait"
+        class="group relative min-h-[240px] overflow-hidden rounded-xl bg-[#dfe3d9] lg:col-span-3">
+
+        <img
+          src="cel.jpg"
+          alt="Player profile photograph"
+          class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-5 left-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+          Off the Pitch
+        </span>
+
+        <button type="button" aria-label="View portrait image"
+          class="gallery-view absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-lg bg-black/35 text-white backdrop-blur-sm transition-colors hover:bg-[#789b45]">
+          <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4" aria-hidden="true">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- View More -->
+    <div class="mt-10 flex justify-center">
+      <a href="#all-photos"
+        class="group inline-flex items-center gap-4 rounded-full border border-[#789b45] px-7 py-3.5 text-[13px] font-bold text-[#20231f] transition-all duration-300 hover:bg-[#789b45] hover:text-white">
+        View More Photos
+
+        <svg viewBox="0 0 24 24" fill="none"
+          class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+          aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6"
+            stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+  <!-- Gallery Lightbox -->
+<div id="gallery-lightbox"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/90 p-4 opacity-0 transition-opacity duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Image preview">
+
+  <button id="lightbox-close" type="button"
+    aria-label="Close image preview"
+    class="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-lg bg-white/10 text-white transition-colors hover:bg-[#789b45]">
+    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+      <path d="m6 6 12 12M18 6 6 18"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <img id="lightbox-image"
+    src=""
+    alt=""
+    class="max-h-[85vh] max-w-full rounded-lg object-contain scale-95 transition-transform duration-300">
+</div>
+  
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('gallery-lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeButton = document.getElementById('lightbox-close');
+  const galleryButtons = document.querySelectorAll('.gallery-view');
+
+  if (!lightbox || !lightboxImage) return;
+
+  // Open image
+  galleryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const galleryItem = button.closest('[data-category]');
+      const image = galleryItem?.querySelector('img');
+
+      if (!image) return;
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        lightbox.classList.remove('opacity-0');
+        lightboxImage.classList.remove('scale-95');
+        lightboxImage.classList.add('scale-100');
+      });
+    });
+  });
+
+  // Close image
+  function closeLightbox() {
+    lightbox.classList.add('opacity-0');
+    lightboxImage.classList.remove('scale-100');
+    lightboxImage.classList.add('scale-95');
+
+    setTimeout(() => {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  closeButton.addEventListener('click', closeLightbox);
+
+  // Close when clicking outside the image
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Close with Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+      closeLightbox();
+    }
+  });
+});
+</script>
+  
+  
+  
+  
+</section>
+
+<!-- Player Performance & Statistics -->
+<section id="performance" class="bg-white py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+
+    <!-- Section Heading -->
+    <div class="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+
+      <div>
+       <span class="mb-2 block text-sm font-semibold text-[#669b35]">
+  Player Performance
+</span>
+
+      <h2 class="font-['Space_Grotesk'] text-3xl font-semibold leading-tight tracking-[-0.045em] text-[#111817] sm:text-4xl lg:text-[46px]">
+  Statistics<span class="text-[#669b35]">.</span>
+</h2>
+
+       <p class="mt-3 max-w-lg font-['Space_Grotesk'] text-[15px] leading-relaxed text-[#68716c] sm:text-base">
+  His numbers, contributions and impact this season.
+</p>
+      </div>
+
+      <!-- Season Filter -->
+      <div class="relative w-full sm:w-auto">
+        <select
+          id="season-filter"
+          class="w-full appearance-none rounded-lg border border-gray-200 bg-white py-3 pl-4 pr-10 text-sm font-semibold text-[#151817] outline-none transition hover:border-[#669b35] focus:border-[#669b35] sm:w-40"
+        >
+          <option value="all">All Seasons</option>
+          <option value="2025/26">2025/26</option>
+          <option value="2022/23">2022/23</option>
+          <option value="2021/22">2021/22</option>
+          <option value="2019/20">2019/20</option>
+          <option value="2016/17">2016/17</option>
+        </select>
+
+        <svg
+          class="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m6 9 6 6 6-6" />
+        </svg>
+      </div>
+
+    </div>
+
+
+    <!-- Statistics Cards -->
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+
+      <!-- Appearances -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 transition hover:border-[#a5c88b]">
+        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0f5eb] text-[#669b35]">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="16" rx="2" stroke-width="1.8"/>
+            <path d="M8 4v16M16 4v16M3 12h18M10 9h4v6h-4z" stroke-width="1.5"/>
+          </svg>
+        </div>
+
+        <p class="text-2xl font-bold tracking-tight text-[#111817]" data-stat="appearances">
+          12
+        </p>
+        <p class="mt-1 text-xs font-medium text-gray-500 sm:text-sm">Appearances</p>
+      </div>
+
+
+      <!-- Goals -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 transition hover:border-[#a5c88b]">
+        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0f5eb] text-[#669b35]">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="3" stroke-width="1.5"/>
+            <path d="m12 3 2.5 6.5L21 12M3 12l6.5-2.5M12 21l2.5-6.5" stroke-width="1.5"/>
+          </svg>
+        </div>
+
+        <p class="text-2xl font-bold tracking-tight text-[#111817]" data-stat="goals">
+          6
+        </p>
+        <p class="mt-1 text-xs font-medium text-gray-500 sm:text-sm">Goals</p>
+      </div>
+
+
+      <!-- Assists -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 transition hover:border-[#a5c88b]">
+        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0f5eb] text-[#669b35]">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M8 12 4 8l4-4M4 8h11a5 5 0 0 1 0 10h-2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m16 16 4 4m0-4-4 4" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <p class="text-2xl font-bold tracking-tight text-[#111817]" data-stat="assists">
+          4
+        </p>
+        <p class="mt-1 text-xs font-medium text-gray-500 sm:text-sm">Assists</p>
+      </div>
+
+
+      <!-- Minutes -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 transition hover:border-[#a5c88b]">
+        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0f5eb] text-[#669b35]">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+            <path d="M12 7v5l3 2" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <p class="text-2xl font-bold tracking-tight text-[#111817]" data-stat="minutes">
+          995
+        </p>
+        <p class="mt-1 text-xs font-medium text-gray-500 sm:text-sm">Minutes Played</p>
+      </div>
+
+
+      <!-- Goals per 90 -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 transition hover:border-[#a5c88b]">
+        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0f5eb] text-[#669b35]">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M4 19V9h4v10M10 19V5h4v14M16 19V2h4v17" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <p class="text-2xl font-bold tracking-tight text-[#111817]" data-stat="goals-per-90">
+          0.54
+        </p>
+        <p class="mt-1 text-xs font-medium text-gray-500 sm:text-sm">Goals per 90</p>
+      </div>
+
+
+      <!-- Cards -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 transition hover:border-[#a5c88b]">
+        <div class="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-[#f0f5eb] text-[#669b35]">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <rect x="4" y="4" width="7" height="16" rx="1" fill="#eab308" stroke="none"/>
+            <rect x="14" y="4" width="7" height="16" rx="1" fill="#dc4444" stroke="none"/>
+          </svg>
+        </div>
+
+        <p class="text-2xl font-bold tracking-tight text-[#111817]" data-stat="cards">
+          2 / 0
+        </p>
+        <p class="mt-1 text-xs font-medium text-gray-500 sm:text-sm">Yellow / Red Cards</p>
+      </div>
+
+    </div>
+
+
+    <!-- Performance Details -->
+    <div class="mt-6 grid grid-cols-1 gap-5 lg:grid-cols-5">
+
+      <!-- Season History -->
+      <div class="rounded-xl border border-gray-200 bg-white p-4 sm:p-5 lg:col-span-3">
+
+        <div class="mb-5 flex items-center justify-between gap-3">
+          <div>
+            <h3 class="font-['DM_Sans'] text-xl font-semibold tracking-tight text-[#151817] sm:text-2xl">
+  Season by Season
+</h3>
+
+<p class="mt-1.5 font-['DM_Sans'] text-sm leading-relaxed text-[#737b75]">
+  His career record across clubs and seasons.
+</p>
+          </div>
+
+          <span class="hidden rounded-full bg-[#f0f5eb] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#669b35] sm:inline-block">
+            Career Stats
+          </span>
+        </div>
+
+
+        <!-- Desktop Table -->
+        <div class="hidden overflow-hidden rounded-lg border border-gray-200 sm:block">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-[#f5f6f3] text-xs font-semibold text-gray-600">
+              <tr>
+                <th class="px-3 py-3">Season</th>
+                <th class="px-3 py-3">Club</th>
+                <th class="px-3 py-3 text-center">Apps</th>
+                <th class="px-3 py-3 text-center">Goals</th>
+                <th class="px-3 py-3 text-center">Assists</th>
+              </tr>
+            </thead>
+            
+               <tbody class="divide-y divide-gray-100 text-[#202624]">
+
+              <tr data-season="2025/26" class="transition hover:bg-[#fafcf8]">
+                <td class="px-3 py-3 font-semibold">2025/26</td>
+                <td class="px-3 py-3">FC Bogny-sur-Meuse</td>
+                <td class="px-3 py-3 text-center">12</td>
+                <td class="px-3 py-3 text-center font-semibold">6</td>
+                <td class="px-3 py-3 text-center">4</td>
+              </tr>
+            
+            
+            
+
+            <tbody class="divide-y divide-gray-100 text-[#202624]">
+
+              <tr data-season="2025/26" class="transition hover:bg-[#fafcf8]">
+                <td class="px-3 py-3 font-semibold">2025/26</td>
+                <td class="px-3 py-3">FC Bogny-sur-Meuse</td>
+                <td class="px-3 py-3 text-center">12</td>
+                <td class="px-3 py-3 text-center font-semibold">6</td>
+                <td class="px-3 py-3 text-center">4</td>
+              </tr>
+
+              <tr data-season="2022/23" class="transition hover:bg-[#fafcf8]">
+                <td class="px-3 py-3 font-semibold">2022/23</td>
+                <td class="px-3 py-3">US Revin FC</td>
+                <td class="px-3 py-3 text-center">18</td>
+                <td class="px-3 py-3 text-center font-semibold">7</td>
+                <td class="px-3 py-3 text-center">3</td>
+              </tr>
+
+              <tr data-season="2021/22" class="transition hover:bg-[#fafcf8]">
+                <td class="px-3 py-3 font-semibold">2021/22</td>
+                <td class="px-3 py-3">FC Dengeoff Kiev</td>
+                <td class="px-3 py-3 text-center">16</td>
+                <td class="px-3 py-3 text-center font-semibold">5</td>
+                <td class="px-3 py-3 text-center">2</td>
+              </tr>
+
+              <tr data-season="2019/20" class="transition hover:bg-[#fafcf8]">
+                <td class="px-3 py-3 font-semibold">2019/20</td>
+                <td class="px-3 py-3">Goddosky FC</td>
+                <td class="px-3 py-3 text-center">14</td>
+                <td class="px-3 py-3 text-center font-semibold">4</td>
+                <td class="px-3 py-3 text-center">1</td>
+              </tr>
+
+              <tr data-season="2016/17" class="transition hover:bg-[#fafcf8]">
+                <td class="px-3 py-3 font-semibold">2016/17</td>
+                <td class="px-3 py-3">Kaduna United</td>
+                <td class="px-3 py-3 text-center">10</td>
+                <td class="px-3 py-3 text-center font-semibold">2</td>
+                <td class="px-3 py-3 text-center">1</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- Mobile Season Cards -->
+        <div class="space-y-3 sm:hidden">
+
+          <div data-season="2025/26" class="rounded-lg border border-gray-100 bg-[#fafbf9] p-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-[#669b35]">2025/26</span>
+              <span class="text-[11px] text-gray-500">Current Club</span>
+            </div>
+          <p class="mt-1.5 text-[15px] font-medium leading-snug tracking-[-0.02em] text-[#252c28] sm:text-base">
+  Athlétique Villers Semeuse
+</p>
+            <div class="mt-3 grid grid-cols-3 border-t border-gray-200 pt-3">
+              <div>
+                <p class="text-lg font-bold text-[#151817]">12</p>
+                <p class="text-[11px] text-gray-500">Apps</p>
+              </div>
+              <div>
+                <p class="text-lg font-bold text-[#151817]">6</p>
+                <p class="text-[11px] text-gray-500">Goals</p>
+              </div>
+              <div>
+                <p class="text-lg font-bold text-[#151817]">4</p>
+                <p class="text-[11px] text-gray-500">Assists</p>
+              </div>
+            </div>
+          </div>
+          
+           <div data-season="2022/23" class="rounded-lg border border-gray-100 bg-[#fafbf9] p-3">
+            <span class="text-xs font-bold text-[#669b35]">2023/25</span>
+            <p class="mt-1.5 text-[15px] font-medium leading-snug tracking-[-0.02em] text-[#252c28] sm:text-base">FC Bogny-sur-Meuse</p>
+            <div class="mt-3 grid grid-cols-3 border-t border-gray-200 pt-3">
+              <div><p class="text-lg font-bold">18</p><p class="text-[11px] text-gray-500">Apps</p></div>
+              <div><p class="text-lg font-bold">7</p><p class="text-[11px] text-gray-500">Goals</p></div>
+              <div><p class="text-lg font-bold">3</p><p class="text-[11px] text-gray-500">Assists</p></div>
+            </div>
+          </div>
+          
+          
+
+          <div data-season="2022/23" class="rounded-lg border border-gray-100 bg-[#fafbf9] p-3">
+            <span class="text-xs font-bold text-[#669b35]">2022/23</span>
+            <p class="mt-1.5 text-[15px] font-medium leading-snug tracking-[-0.02em] text-[#252c28] sm:text-base">US Revin FC</p>
+            <div class="mt-3 grid grid-cols-3 border-t border-gray-200 pt-3">
+              <div><p class="text-lg font-bold">18</p><p class="text-[11px] text-gray-500">Apps</p></div>
+              <div><p class="text-lg font-bold">7</p><p class="text-[11px] text-gray-500">Goals</p></div>
+              <div><p class="text-lg font-bold">3</p><p class="text-[11px] text-gray-500">Assists</p></div>
+            </div>
+          </div>
+
+          <div data-season="2021/22" class="rounded-lg border border-gray-100 bg-[#fafbf9] p-3">
+            <span class="text-xs font-bold text-[#669b35]">2021/22</span>
+           <p class="mt-1.5 text-[15px] font-medium leading-snug tracking-[-0.02em] text-[#252c28] sm:text-base">
+  FC Dengeoff Kiev
+</p>
+            <div class="mt-3 grid grid-cols-3 border-t border-gray-200 pt-3">
+              <div><p class="text-lg font-bold">16</p><p class="text-[11px] text-gray-500">Apps</p></div>
+              <div><p class="text-lg font-bold">5</p><p class="text-[11px] text-gray-500">Goals</p></div>
+              <div><p class="text-lg font-bold">2</p><p class="text-[11px] text-gray-500">Assists</p></div>
+            </div>
+          </div>
+
+          <div data-season="2019/20" class="rounded-lg border border-gray-100 bg-[#fafbf9] p-3">
+            <span class="text-xs font-bold text-[#669b35]">2019/20</span>
+            <p class="mt-1.5 text-[15px] font-medium leading-snug tracking-[-0.02em] text-[#252c28] sm:text-base">Goddosky FC</p>
+            <div class="mt-3 grid grid-cols-3 border-t border-gray-200 pt-3">
+              <div><p class="text-lg font-bold">14</p><p class="text-[11px] text-gray-500">Apps</p></div>
+              <div><p class="text-lg font-bold">4</p><p class="text-[11px] text-gray-500">Goals</p></div>
+              <div><p class="text-lg font-bold">1</p><p class="text-[11px] text-gray-500">Assists</p></div>
+            </div>
+          </div>
+
+          <div data-season="2016/17" class="rounded-lg border border-gray-100 bg-[#fafbf9] p-3">
+            <span class="text-xs font-bold text-[#669b35]">2016/17</span>
+            <p class="mt-1.5 text-[15px] font-medium leading-snug tracking-[-0.02em] text-[#252c28] sm:text-base">Kaduna United</p>
+            <div class="mt-3 grid grid-cols-3 border-t border-gray-200 pt-3">
+              <div><p class="text-lg font-bold">10</p><p class="text-[11px] text-gray-500">Apps</p></div>
+              <div><p class="text-lg font-bold">2</p><p class="text-[11px] text-gray-500">Goals</p></div>
+              <div><p class="text-lg font-bold">1</p><p class="text-[11px] text-gray-500">Assists</p></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Playing Position Heatmap -->
+      <div class="rounded-xl border border-gray-200 bg-[#071a13] p-4 text-white sm:p-5 lg:col-span-2">
+
+        <div class="mb-4">
+          <div class="flex items-center gap-2">
+            <svg class="h-5 w-5 text-[#9acb62]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M4 19V9h4v10M10 19V5h4v14M16 19V2h4v17"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <h3 class="text-base font-bold">Position Heatmap</h3>
+          </div>
+
+          <p class="mt-1 text-xs text-gray-400">
+            Areas of activity across the pitch
+          </p>
+        </div>
+
+
+        <!-- Pitch -->
+        <div class="relative overflow-hidden rounded-lg border border-white/20 bg-[#102d20]">
+
+          <div class="relative aspect-[4/3] w-full overflow-hidden">
+
+            <!-- Heat Areas -->
+            <div class="absolute inset-0"
+              style="
+                background:
+                radial-gradient(ellipse at 68% 35%, rgba(190,255,25,.85), transparent 13%),
+                radial-gradient(ellipse at 76% 53%, rgba(190,255,25,.65), transparent 15%),
+                radial-gradient(ellipse at 55% 60%, rgba(130,220,30,.65), transparent 16%),
+                radial-gradient(ellipse at 42% 32%, rgba(130,220,30,.45), transparent 13%),
+                radial-gradient(ellipse at 83% 78%, rgba(130,220,30,.45), transparent 14%);
+              ">
+            </div>
+
+            <!-- Pitch Markings -->
+            <div class="absolute inset-[5%] border border-white/60">
+
+              <div class="absolute left-1/2 top-0 h-full border-l border-white/50"></div>
+
+              <div class="absolute left-1/2 top-1/2 h-[30%] aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/60"></div>
+
+              <div class="absolute left-0 top-1/2 h-[38%] w-[16%] -translate-y-1/2 border border-l-0 border-white/60"></div>
+
+              <div class="absolute right-0 top-1/2 h-[38%] w-[16%] -translate-y-1/2 border border-r-0 border-white/60"></div>
+
+              <div class="absolute left-0 top-1/2 h-[17%] w-[5%] -translate-y-1/2 border border-l-0 border-white/60"></div>
+
+              <div class="absolute right-0 top-1/2 h-[17%] w-[5%] -translate-y-1/2 border border-r-0 border-white/60"></div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <p class="mt-3 text-[11px] leading-5 text-gray-400">
+          Visual representation of his positional activity. Actual tracking data required for an accurate heatmap.
+        </p>
+
+      </div>
+
+    </div>
+
+    <p class="mt-5 text-[10px] leading-5 text-gray-400">
+      Statistics should be based on verified match records and updated as new performance data becomes available.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- Season Filter -->
+<script>
+  const seasonFilter = document.getElementById("season-filter");
+
+  if (seasonFilter) {
+    seasonFilter.addEventListener("change", function () {
+      const selectedSeason = this.value;
+
+      document.querySelectorAll("[data-season]").forEach(item => {
+        item.style.display =
+          selectedSeason === "all" ||
+          item.dataset.season === selectedSeason
+            ? ""
+            : "none";
+      });
+    });
+  }
+</script>
+
+
+
+
+
+
+
+
+<!-- Gallery Filter -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const filters = document.querySelectorAll("[data-filter]");
+    const galleryItems = document.querySelectorAll("#player-gallery [data-category]");
+
+    filters.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.dataset.filter;
+
+        filters.forEach((filter) => {
+          filter.classList.remove("bg-[#789b45]", "text-white");
+          filter.classList.add("border", "border-[#e7e9e3]", "bg-white", "text-[#454b43]");
+        });
+
+        button.classList.remove("border", "border-[#e7e9e3]", "bg-white", "text-[#454b43]");
+        button.classList.add("bg-[#789b45]", "text-white");
+
+        galleryItems.forEach((item) => {
+          const matches = selected === "all" || item.dataset.category === selected;
+          item.classList.toggle("hidden", !matches);
+        });
+      });
+    });
+  });
+</script>
+ 
+ 
+ 
+ </body>
+ 
+ 
+ 
+ 
+ 
+ <!-- ETM Footer -->
+<footer class="border-t border-[#e8eae5] bg-white text-[#292d28]">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+    <!-- Main Footer -->
+    <div class="grid grid-cols-1 gap-10 py-12 sm:py-14 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:gap-12 lg:py-16">
+
+      <!-- Brand -->
+      <div class="max-w-sm">
+        <a href="/" class="mb-5 inline-flex items-center">
+          <img
+            src="logo.png"
+            alt="Elite Transfer Market"
+            class="h-10 w-auto object-contain"
+          />
+        </a>
+
+     <p class="max-w-[320px] text-[15px] font-normal leading-[1.8] text-[#555b52]">
+  Football transfers, player values and the latest stories from across African football.
+</p>
+
+        <!-- Socials -->
+        <div class="mt-6 flex items-center gap-3">
+
+          <a
+            href="#"
+            aria-label="ETM on X"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[15px] w-[15px]" fill="currentColor" aria-hidden="true">
+              <path d="M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.65L5.35 22H2.2l7.25-8.28L1.8 2h6.4l4.43 6.96L18.9 2Zm-1.1 18h1.73L7.27 3.9H5.42L17.8 20Z"/>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            aria-label="ETM on Instagram"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[17px] w-[17px]" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.8" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            aria-label="ETM on Facebook"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[17px] w-[17px]" fill="currentColor" aria-hidden="true">
+              <path d="M13.4 21v-8.2h2.8l.42-3.2H13.4V7.55c0-.93.26-1.56 1.6-1.56h1.72V3.13A22.5 22.5 0 0 0 14.2 3c-2.5 0-4.2 1.53-4.2 4.35V9.6H7.2v3.2H10V21h3.4Z"/>
+            </svg>
+          </a>
+
+          <a
+            href="#"
+            aria-label="ETM on YouTube"
+            class="flex h-9 w-9 items-center justify-center rounded-full border border-[#e5e7e1] text-[#555b52] transition-colors duration-200 hover:border-[#789b45] hover:bg-[#789b45] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" class="h-[17px] w-[17px]" fill="currentColor" aria-hidden="true">
+              <path d="M23.2 6.2a3 3 0 0 0-2.1-2.1C19.2 3.6 12 3.6 12 3.6s-7.2 0-9.1.5A3 3 0 0 0 .8 6.2 31 31 0 0 0 .3 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.1.5 9.1.5s7.2 0 9.1-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.8 31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+     <!-- Footer Navigation -->
+<div class="grid grid-cols-2 gap-x-6 gap-y-9 sm:gap-x-10 lg:grid-cols-3 lg:gap-12">
+  
+  <!-- Explore -->
+  <div>
+    <h3 class="mb-4 text-sm font-bold text-[#20231f]">
+      Explore
+    </h3>
+    
+    <ul class="space-y-3 text-sm text-[#737970]">
+      <li><a href="#transfers" class="transition-colors duration-200 hover:text-[#607d35]">Latest Transfers</a></li>
+      <li><a href="#players" class="transition-colors duration-200 hover:text-[#607d35]">Players</a></li>
+      <li><a href="#clubs" class="transition-colors duration-200 hover:text-[#607d35]">Clubs</a></li>
+      <li><a href="#competitions" class="transition-colors duration-200 hover:text-[#607d35]">Competitions</a></li>
+      <li><a href="#fixtures" class="transition-colors duration-200 hover:text-[#607d35]">Fixtures &amp; Results</a></li>
+    </ul>
+  </div>
+  
+  <!-- Football -->
+  <div>
+    <h3 class="mb-4 text-sm font-bold text-[#20231f]">
+      Football
+    </h3>
+    
+    <ul class="space-y-3 text-sm text-[#737970]">
+      <li><a href="#african-football" class="transition-colors duration-200 hover:text-[#607d35]">African Football</a></li>
+      <li><a href="#women-football" class="transition-colors duration-200 hover:text-[#607d35]">Women's Football</a></li>
+      <li><a href="#market-values" class="transition-colors duration-200 hover:text-[#607d35]">Market Values</a></li>
+      <li><a href="#rankings" class="transition-colors duration-200 hover:text-[#607d35]">Club Rankings</a></li>
+      <li><a href="#news" class="transition-colors duration-200 hover:text-[#607d35]">Football News</a></li>
+    </ul>
+  </div>
+  
+ 
+  
+</div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col gap-3 border-t border-[#e8eae5] py-5 sm:flex-row sm:items-center sm:justify-between sm:py-6">
+
+      <p class="text-xs leading-5 text-[#858a82]">
+        © <span id="etm-year"></span> Elite Transfer Market. All rights reserved.
+      </p>
+
+      
+
+
+    </div>
+  </div>
+</footer>
+  <!-- Mobile Menu JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+      if (!menuButton || !mobileMenu || !menuIcon) {
+        console.error("ETM: Mobile navigation elements could not be found.");
+        return;
+      }
+
+      const hamburgerIcon = `
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      `;
+
+      const closeIcon = `
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      `;
+
+      function setMenuState(isOpen) {
+        mobileMenu.classList.toggle("hidden", !isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+          "aria-label",
+          isOpen ? "Close menu" : "Open menu"
+        );
+
+        menuIcon.innerHTML = isOpen ? closeIcon : hamburgerIcon;
+      }
+
+      menuButton.addEventListener("click", () => {
+        const isOpen =
+          menuButton.getAttribute("aria-expanded") === "true";
+
+        setMenuState(!isOpen);
+      });
+
+      // Close the menu after a navigation link is selected.
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          setMenuState(false);
+        });
+      });
+
+      // Close the menu when clicking outside it.
+      document.addEventListener("click", (event) => {
+        const isOpen =
+          menuButton.getAttribute("aria-expanded") === "true";
+
+        if (
+          isOpen &&
+          !mobileMenu.contains(event.target) &&
+          !menuButton.contains(event.target)
+        ) {
+          setMenuState(false);
+        }
+      });
+
+      // Close the mobile menu when switching to desktop width.
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1024) {
+          setMenuState(false);
+        }
+      });
+
+      // Close the menu with the Escape key.
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          menuButton.getAttribute("aria-expanded") === "true"
+        ) {
+          setMenuState(false);
+          menuButton.focus();
+        }
+      });
+    });
+  </script>
+
+<script>
+  document.getElementById("etm-year").textContent = new Date().getFullYear();
+</script>
+
+
+</html>
